@@ -1,69 +1,298 @@
-@extends('layouts.app')
+{{--<!DOCTYPE html>--}}
+{{--<html lang="en">--}}
+{{--<head>--}}
+    {{--<meta charset="utf-8">--}}
+    {{--<title>Bootstrap E-commerce Templates</title>--}}
+    {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+    {{--<meta name="description" content="">--}}
+    {{--<!--[if ie]>--}}
+    {{--<meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->--}}
+    {{--<!-- bootstrap -->--}}
+    {{--<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('css/themes/bootstrappage.css') }}" rel="stylesheet"/>--}}
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Login</div>
+    {{--<!-- global styles -->--}}
+    {{--<link href="{{ asset('css/themes/flexslider.css') }}" rel="stylesheet"/>--}}
+    {{--<link href="{{ asset('css/themes/main.css') }}" rel="stylesheet"/>--}}
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    {{--<!-- scripts -->--}}
+    {{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
+    {{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
+    {{--<script src="{{asset('js/themes/superfish.js')}}"></script>--}}
+    {{--<script src="{{asset('js/themes/jquery.scrolltotop.js')}}"></script>--}}
+    {{--<!--[if lt IE 9]>--}}
+    {{--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>--}}
+    {{--<script src="js/respond.min.js"></script>--}}
+    {{--<![endif]-->--}}
+{{--</head>--}}
+{{--<body>--}}
+{{--<div id="top-bar" class="container">--}}
+    {{--<div class="row">--}}
+        {{--<div class="span4">--}}
+            {{--<form method="POST" class="search_form">--}}
+                {{--<input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">--}}
+            {{--</form>--}}
+        {{--</div>--}}
+        {{--<div class="span8">--}}
+            {{--<div class="account pull-right">--}}
+                {{--<ul class="user-menu">--}}
+                    {{--<li><a href="#">My Account</a></li>--}}
+                    {{--<li><a href="cart.html">Your Cart</a></li>--}}
+                    {{--<li><a href="checkout.html">Checkout</a></li>--}}
+                    {{--<li><a href="register.html">Login</a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+{{--<div id="wrapper" class="container">--}}
+    {{--<section class="navbar main-menu">--}}
+        {{--<div class="navbar-inner main-menu">--}}
+            {{--<a href="index.html" class="logo pull-left"><img src="{{ asset('img/shopper/logo.png') }}" class="site_logo" alt=""></a>--}}
+            {{--<nav id="menu" class="pull-right">--}}
+                {{--<ul>--}}
+                    {{--<li><a href="./products.html">Woman</a>--}}
+                        {{--<ul>--}}
+                            {{--<li><a href="./products.html">Lacinia nibh</a></li>--}}
+                            {{--<li><a href="./products.html">Eget molestie</a></li>--}}
+                            {{--<li><a href="./products.html">Varius purus</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li><a href="./products.html">Man</a></li>--}}
+                    {{--<li><a href="./products.html">Sport</a>--}}
+                        {{--<ul>--}}
+                            {{--<li><a href="./products.html">Gifts and Tech</a></li>--}}
+                            {{--<li><a href="./products.html">Ties and Hats</a></li>--}}
+                            {{--<li><a href="./products.html">Cold Weather</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li><a href="./products.html">Hangbag</a></li>--}}
+                    {{--<li><a href="./products.html">Best Seller</a></li>--}}
+                    {{--<li><a href="./products.html">Top Seller</a></li>--}}
+                {{--</ul>--}}
+            {{--</nav>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+    {{--<section class="header_text sub">--}}
+        {{--<img class="pageBanner" src="{{ asset('img/shopper/pageBanner.png') }}" alt="New products">--}}
+        {{--<h4><span>Login or Regsiter</span></h4>--}}
+    {{--</section>--}}
+    {{--<section class="main-content">--}}
+        {{--<div class="row">--}}
+            {{--<div class="span5">--}}
+                {{--<h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>--}}
+                {{--<form action="{{ route('login') }}" method="post">--}}
+                    {{--@csrf--}}
+                    {{--<input type="hidden" name="next" value="/">--}}
+                    {{--<fieldset>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<label class="control-label">Email</label>--}}
+                            {{--@if ($errors->has('email'))--}}
+                                {{--<span class="invalid-feedback">--}}
+                                    {{--<strong>{{ $errors->first('email') }}</strong>--}}
+                                {{--</span>--}}
+                            {{--@endif--}}
+                            {{--<div class="controls">--}}
+                                {{--<input type="email" placeholder="Enter your email" name="email" id="email" class="input-xlarge">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<label class="control-label">Password</label>--}}
+                            {{--@if ($errors->has('password'))--}}
+                                {{--<span class="invalid-feedback">--}}
+                                    {{--<strong>{{ $errors->first('password') }}</strong>--}}
+                                {{--</span>--}}
+                            {{--@endif--}}
+                            {{--<div class="controls">--}}
+                                {{--<input type="password" placeholder="Enter your password" id="password" name="password"--}}
+                                       {{--class="input-xlarge">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<button tabindex="3" class="btn btn-inverse large" type="submit">Sign into your account</button>--}}
+                            {{--<hr>--}}
+                            {{--<p class="reset">Recover your--}}
+                                {{--<a tabindex="4" href="#" title="Recover your username or password">--}}
+                                    {{--username or password--}}
+                                {{--</a>--}}
+                            {{--</p>--}}
+                        {{--</div>--}}
+                    {{--</fieldset>--}}
+                {{--</form>--}}
+            {{--</div>--}}
+            {{--<div class="span7">--}}
+                {{--<h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>--}}
+                {{--<form action="#" method="post" class="form-stacked">--}}
+                    {{--<fieldset>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<label class="control-label">Username</label>--}}
+                            {{--<div class="controls">--}}
+                                {{--<input type="text" placeholder="Enter your username" class="input-xlarge">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<label class="control-label">Email address:</label>--}}
+                            {{--<div class="controls">--}}
+                                {{--<input type="password" placeholder="Enter your email" class="input-xlarge">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<label class="control-label">Password:</label>--}}
+                            {{--<div class="controls">--}}
+                                {{--<input type="password" placeholder="Enter your password" class="input-xlarge">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="control-group">--}}
+                            {{--<p>Now that we know who you are. I'm not a mistake! In a comic, you know how you can tell--}}
+                                {{--who the arch-villain's going to be?</p>--}}
+                        {{--</div>--}}
+                        {{--<hr>--}}
+                        {{--<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit"--}}
+                                                    {{--value="Create your account"></div>--}}
+                    {{--</fieldset>--}}
+                {{--</form>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+    {{--<section id="footer-bar">--}}
+        {{--<div class="row">--}}
+            {{--<div class="span3">--}}
+                {{--<h4>Navigation</h4>--}}
+                {{--<ul class="nav">--}}
+                    {{--<li><a href="./index.html">Homepage</a></li>--}}
+                    {{--<li><a href="./about.html">About Us</a></li>--}}
+                    {{--<li><a href="./contact.html">Contac Us</a></li>--}}
+                    {{--<li><a href="./cart.html">Your Cart</a></li>--}}
+                    {{--<li><a href="./register.html">Login</a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="span4">--}}
+                {{--<h4>My Account</h4>--}}
+                {{--<ul class="nav">--}}
+                    {{--<li><a href="#">My Account</a></li>--}}
+                    {{--<li><a href="#">Order History</a></li>--}}
+                    {{--<li><a href="#">Wish List</a></li>--}}
+                    {{--<li><a href="#">Newsletter</a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="span5">--}}
+                {{--<p class="logo"><img src="{{ asset('img/shopper/logo.png') }}" class="site_logo" alt=""></p>--}}
+                {{--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the Lorem Ipsum has been--}}
+                    {{--the industry's standard dummy text ever since the you.</p>--}}
+                {{--<br/>--}}
+                {{--<span class="social_icons">--}}
+							{{--<a class="facebook" href="#">Facebook</a>--}}
+							{{--<a class="twitter" href="#">Twitter</a>--}}
+							{{--<a class="skype" href="#">Skype</a>--}}
+							{{--<a class="vimeo" href="#">Vimeo</a>--}}
+						{{--</span>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+    {{--<section id="copyright">--}}
+        {{--<span>Copyright 2013 bootstrappage template  All right reserved.</span>--}}
+    {{--</section>--}}
+{{--</div>--}}
+{{--<script src="{{ asset('js/themes/common.js') }}"></script>--}}
+{{--<script src="{{ asset('js/themes/jquery.flexslider-min.js') }}"></script>--}}
+{{--<script>--}}
+    {{--$(document).ready(function () {--}}
+        {{--$('#checkout').click(function (e) {--}}
+            {{--document.location.href = "checkout.html";--}}
+        {{--})--}}
+    {{--});--}}
+{{--</script>--}}
+{{--</body>--}}
+{{--</html>--}}
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+@extends('layouts.master')
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+@section('header-content')
+    <section class="header_text sub">
+        <img class="pageBanner" src="{{ asset('img/shopper/pageBanner.png') }}" alt="New products">
+        <h4><span>Login or Regsiter</span></h4>
+    </section>
+@endsection
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+@section('main-content')
+    <section class="main-content">
+        <div class="row">
+            <div class="span5">
+                <h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
+                <form action="{{ route('login') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="next" value="/">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label">Email</label>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+                            <div class="controls">
+                                <input type="email" placeholder="Enter your email" name="email" id="email"
+                                       class="input-xlarge">
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="control-group">
+                            <label class="control-label">Password</label>
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
+                            <div class="controls">
+                                <input type="password" placeholder="Enter your password" id="password" name="password"
+                                       class="input-xlarge">
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                        <div class="control-group">
+                            <button tabindex="3" class="btn btn-inverse large" type="submit">Sign into your account
+                            </button>
+                            <hr>
+                            <p class="reset">Recover your
+                                <a tabindex="4" href="#" title="Recover your username or password">
+                                    username or password
                                 </a>
+                            </p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="span7">
+                <h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
+                <form action="#" method="post" class="form-stacked">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label">Username</label>
+                            <div class="controls">
+                                <input type="text" placeholder="Enter your username" class="input-xlarge">
                             </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="control-group">
+                            <label class="control-label">Email address:</label>
+                            <div class="controls">
+                                <input type="password" placeholder="Enter your email" class="input-xlarge">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Password:</label>
+                            <div class="controls">
+                                <input type="password" placeholder="Enter your password" class="input-xlarge">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <p>Now that we know who you are. I'm not a mistake! In a comic, you know how you can tell
+                                who the arch-villain's going to be?</p>
+                        </div>
+                        <hr>
+                        <div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit"
+                                                    value="Create your account"></div>
+                    </fieldset>
+                </form>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection

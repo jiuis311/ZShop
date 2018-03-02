@@ -23,7 +23,6 @@
                             <th>Email</th>
                             <th>Phone number</th>
                             <th>Address</th>
-                            <th>JLPT level</th>
                             <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -31,7 +30,6 @@
                         </thead>
                         <tfoot>
                         <tr>
-                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -50,7 +48,6 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->address }}</td>
-                                <td>{{ $user->JLPT }}</td>
                                 <td>
                                     <a href="{{ route('admin.user.show', $user->id) }}">
                                         <button class="btn btn-primary btn-sm">
@@ -153,16 +150,6 @@
             });
             // END AJAX
 
-            $("#imgFile").change(function () {
-                $('#uploadImg').removeClass('hidden');
-                readURL(this);
-            });
-            $('#uploadImgBtn').on('click', function() {
-                $("#imgFile").trigger('click');
-            });
-            $('.modal-footer .btn-primary').on('click', function() {
-                $("#addEmployee").trigger('click');
-            });
         });
 
     </script>

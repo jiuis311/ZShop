@@ -41,11 +41,7 @@ class ManageUserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $data = $request->all();
-        if ($request->hasFile('img')) {
-            $imgLink = $request->file('img')->store('public/images');
-            $imgLink = substr($imgLink, 7);
-            $data["image"] = $imgLink;
-        }
+        $data['password'] = bcrypt($data['password']);
         User::create($data);
         return redirect()->route('admin.user.index');
     }

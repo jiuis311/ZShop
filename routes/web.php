@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
 
 Route::prefix('admin')->group(function() {
     //Admin Log in
@@ -33,8 +33,6 @@ Route::prefix('admin')->group(function() {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function (){
+    return view('index');
+});

@@ -11,3 +11,7 @@
 .form-group .input-warning {
 	color: red;
 }
+
+.search_form input {
+	color: black;
+}
