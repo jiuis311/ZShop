@@ -1,77 +1,64 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Register</div>
+@section('header-content')
+    <section class="header_text sub">
+        <img class="pageBanner" src="{{ asset('img/shopper/pageBanner.png') }}" alt="New products">
+        <h4><span>Regsiter</span></h4>
+    </section>
+@endsection
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
+@section('main-content')
+    <section class="main-content">
+        <div class="row">
+            <div class="span4"></div>
+            <div class="span4">
+                <h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
+                <form action="{{ route('register') }}" method="post">
+                    @csrf
+                    <div class="control-group">
+                        <label class="control-label">Name</label>
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                        @endif
+                        <div class="controls">
+                            <input type="text" placeholder="Enter your name" name="name" class="input-xlarge">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Email address:</label>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                        @endif
+                        <div class="controls">
+                            <input type="email" placeholder="Enter your email" name="email" class="input-xlarge">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password:</label>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                        @endif
+                        <div class="controls">
+                            <input type="password" placeholder="Enter your password" name="password"
+                                   class="input-xlarge">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Confirm password:</label>
+                        <div class="controls">
+                            <input type="password" placeholder="Confirm your password" name="password_confirmation"
+                                   class="input-xlarge">
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <button tabindex="9" class="btn btn-inverse large" type="submit">Create your account</button>
+                </form>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection

@@ -31,8 +31,14 @@ Route::prefix('admin')->group(function() {
     });
 });
 
+Route::get('/products', 'HomeController@products')->name('products');
+Route::get('/product-details', 'HomeController@productDetail')->name('product.detail');
+Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/cart', 'HomeController@cart')->name('cart');
+
 Auth::routes();
 
 Route::get('/home', function (){
     return view('index');
 });
+

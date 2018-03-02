@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -24,5 +15,26 @@ class HomeController extends Controller
     public function index()
     {
         return view('index');
+    }
+
+    public function products() {
+        return view('products.products');
+    }
+
+    public function productDetail() {
+        return view('products.product-details');
+    }
+
+    public function contact() {
+        return view('contact');
+    }
+
+    public function cart() {
+        return view('cart');
+    }
+
+    public function register(Request $request) {
+        dd('Done');
+        User::create($request);
     }
 }

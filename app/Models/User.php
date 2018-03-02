@@ -9,6 +9,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const MALE = 1;
+    const FEMALE = 0;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,5 +29,9 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $attributes = [
+        "gender" => 1,
     ];
 }
