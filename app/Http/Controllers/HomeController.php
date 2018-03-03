@@ -33,8 +33,7 @@ class HomeController extends Controller
         return view('cart');
     }
 
-    public function register(Request $request) {
-        dd('Done');
-        User::create($request);
+    public function checkout() {
+        return view('checkout');
     }
 }

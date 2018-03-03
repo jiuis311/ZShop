@@ -8,13 +8,13 @@
         <div class="span8">
             <div class="account pull-right">
                 <ul class="user-menu">
+                    <li><a href="{{ route('checkout') }}">Checkout</a></li>
+                    <li><a href="{{ route('cart') }}">Your Cart</a></li>
                     @if (!\Illuminate\Support\Facades\Auth::guard()->check())
                         <li><a href="{{ url('login') }}">Login</a></li>
                         <li><a href="{{ url('register') }}">Register</a></li>
                     @else
                         <li><a href="#">My Account</a></li>
-                        <li><a href="cart.html">Your Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
                         <li><a id="logout" href="#">Logout</a></li>
                         <form action="{{ route('logout') }}" method="post" class="hidden">
                             @csrf

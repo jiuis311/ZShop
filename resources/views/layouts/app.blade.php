@@ -38,8 +38,8 @@
             <div class="account pull-right">
                 <ul class="user-menu">
                     <li><a href="#">My Account</a></li>
-                    <li><a href="cart.html">Your Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="{{ route('cart') }}">Your Cart</a></li>
+                    <li><a href="{{ route('checkout') }}">Checkout</a></li>
                     <li><a href="register.html">Login</a></li>
                 </ul>
             </div>
@@ -52,24 +52,24 @@
             <a href="index.html" class="logo pull-left"><img src="{{ asset('img/themes/logo.png') }}" class="site_logo" alt=""></a>
             <nav id="menu" class="pull-right">
                 <ul>
-                    <li><a href="./products.html">Woman</a>
+                    <li><a href="./{{ route('products') }}">Woman</a>
                         <ul>
-                            <li><a href="./products.html">Lacinia nibh</a></li>
-                            <li><a href="./products.html">Eget molestie</a></li>
-                            <li><a href="./products.html">Varius purus</a></li>
+                            <li><a href="./{{ route('products') }}">Lacinia nibh</a></li>
+                            <li><a href="./{{ route('products') }}">Eget molestie</a></li>
+                            <li><a href="./{{ route('products') }}">Varius purus</a></li>
                         </ul>
                     </li>
-                    <li><a href="./products.html">Man</a></li>
-                    <li><a href="./products.html">Sport</a>
+                    <li><a href="./{{ route('products') }}">Man</a></li>
+                    <li><a href="./{{ route('products') }}">Sport</a>
                         <ul>
-                            <li><a href="./products.html">Gifts and Tech</a></li>
-                            <li><a href="./products.html">Ties and Hats</a></li>
-                            <li><a href="./products.html">Cold Weather</a></li>
+                            <li><a href="./{{ route('products') }}">Gifts and Tech</a></li>
+                            <li><a href="./{{ route('products') }}">Ties and Hats</a></li>
+                            <li><a href="./{{ route('products') }}">Cold Weather</a></li>
                         </ul>
                     </li>
-                    <li><a href="./products.html">Hangbag</a></li>
-                    <li><a href="./products.html">Best Seller</a></li>
-                    <li><a href="./products.html">Top Seller</a></li>
+                    <li><a href="./{{ route('products') }}">Hangbag</a></li>
+                    <li><a href="./{{ route('products') }}">Best Seller</a></li>
+                    <li><a href="./{{ route('products') }}">Top Seller</a></li>
                 </ul>
             </nav>
         </div>
@@ -113,34 +113,34 @@
                                         <li class="span3">
                                             <div class="product-box">
                                                 <span class="sale_tag"></span>
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/1.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-                                                <a href="products.html" class="category">Commodo consequat</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/1.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Ut wisi enim ad</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Commodo consequat</a>
                                                 <p class="price">$17.25</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
                                                 <span class="sale_tag"></span>
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/2.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/2.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Quis nostrud exerci tation</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$32.50</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/3.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Know exactly turned</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/3.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Know exactly turned</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$14.20</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/4.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">You think fast</a><br/>
-                                                <a href="products.html" class="category">World once</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/4.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">You think fast</a><br/>
+                                                <a href="{{ route('products') }}" class="category">World once</a>
                                                 <p class="price">$31.45</p>
                                             </div>
                                         </li>
@@ -150,33 +150,33 @@
                                     <ul class="thumbnails">
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/5.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Know exactly</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/5.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Know exactly</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$22.30</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/6.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-                                                <a href="products.html" class="category">Commodo consequat</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/6.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Ut wisi enim ad</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Commodo consequat</a>
                                                 <p class="price">$40.25</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/7.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">You think water</a><br/>
-                                                <a href="products.html" class="category">World once</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/7.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">You think water</a><br/>
+                                                <a href="{{ route('products') }}" class="category">World once</a>
                                                 <p class="price">$10.45</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/ladies/8.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/ladies/8.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Quis nostrud exerci</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$35.50</p>
                                             </div>
                                         </li>
@@ -202,33 +202,33 @@
                                         <li class="span3">
                                             <div class="product-box">
                                                 <span class="sale_tag"></span>
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware2.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-                                                <a href="products.html" class="category">Commodo consequat</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware2.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Ut wisi enim ad</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Commodo consequat</a>
                                                 <p class="price">$25.50</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware1.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware1.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Quis nostrud exerci tation</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$17.55</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware6.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Know exactly turned</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware6.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Know exactly turned</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$25.30</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware5.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">You think fast</a><br/>
-                                                <a href="products.html" class="category">World once</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware5.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">You think fast</a><br/>
+                                                <a href="{{ route('products') }}" class="category">World once</a>
                                                 <p class="price">$25.60</p>
                                             </div>
                                         </li>
@@ -238,33 +238,33 @@
                                     <ul class="thumbnails">
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware4.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Know exactly</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware4.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Know exactly</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$45.50</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware3.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-                                                <a href="products.html" class="category">Commodo consequat</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware3.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Ut wisi enim ad</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Commodo consequat</a>
                                                 <p class="price">$33.50</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware2.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">You think water</a><br/>
-                                                <a href="products.html" class="category">World once</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware2.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">You think water</a><br/>
+                                                <a href="{{ route('products') }}" class="category">World once</a>
                                                 <p class="price">$45.30</p>
                                             </div>
                                         </li>
                                         <li class="span3">
                                             <div class="product-box">
-                                                <p><a href="product_detail.html"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware1.jpg') }}" alt="" /></a></p>
-                                                <a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-                                                <a href="products.html" class="category">Quis nostrud</a>
+                                                <p><a href="{{ route('product.detail') }}"><img src="{{ asset('img/themes/cloth/bootstrap-women-ware1.jpg') }}" alt="" /></a></p>
+                                                <a href="{{ route('product.detail') }}" class="title">Quis nostrud exerci</a><br/>
+                                                <a href="{{ route('products') }}" class="category">Quis nostrud</a>
                                                 <p class="price">$25.20</p>
                                             </div>
                                         </li>
@@ -337,7 +337,7 @@
                     <li><a href="./index.html">Homepage</a></li>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contac Us</a></li>
-                    <li><a href="./cart.html">Your Cart</a></li>
+                    <li><a href="./{{ route('cart') }}">Your Cart</a></li>
                     <li><a href="./register.html">Login</a></li>
                 </ul>
             </div>

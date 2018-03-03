@@ -35,6 +35,7 @@ Route::get('/products', 'HomeController@products')->name('products');
 Route::get('/product-details', 'HomeController@productDetail')->name('product.detail');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/cart', 'HomeController@cart')->name('cart');
+Route::get('/checkout', 'HomeController@checkout')->name('checkout');
 
 Auth::routes();
 
