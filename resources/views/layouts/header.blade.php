@@ -4,6 +4,7 @@
 <meta name="description" content="">
 <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 <!-- bootstrap -->
+<link rel="icon" href="{{ asset('img/favicon.png') }}">
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/themes/bootstrappage.css') }}" rel="stylesheet"/>
