@@ -31,6 +31,16 @@
                     <li><a href="{{ route('admin.user.create') }}"><i class="fa fa-user-plus"></i>Add new user</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cubes"></i> <span>Product</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.product.index') }}"><i class="fa fa-cubes"></i>Product list</a></li>
+                    <li><a href="{{ route('admin.product.create') }}"><i class="fa fa-plus"></i>Add new product</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

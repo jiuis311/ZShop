@@ -24,26 +24,28 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    Name: {{ $user->name }}
+                    Code: {{ $product->code }}
                     <br>
-                    Gender: {{ ($user->gender)?"Male":"Female" }}
+                    Name: {{ $product->name }}
                     <br>
-                    Email: {{ $user->email }}
+                    Brand: {{ $product->brand->name }}
                     <br>
-                    Phone number: {{ $user->phone_number }}
+                    Category: {{ $product->category->name }}
                     <br>
-                    Address: {{ $user->address }}
+                    Description: {{ $product->description }}
+                    <br>
+                    Price: {{ $product->price }}
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <a href="{{ route('admin.user.edit', ['id'=>$product->id]) }}">
+                    <a href="{{ route('admin.product.edit', ['id'=>$product->id]) }}">
                         <button class="btn btn-warning">Edit information</button>
                     </a>
                 </div>
                 <!-- /.box-footer-->
             </div>
             <!-- /.box -->
-            <a href="{{ route('admin.user.index') }}"><button class="btn btn-success pull-left"><i class="fa fa-users"></i> User list</button></a>
+            <a href="{{ route('admin.product.index') }}"><button class="btn btn-success pull-left"><i class="fa fa-cubes"></i> Product list</button></a>
 
             {{--Upload image modal--}}
             <!-- Modal -->
