@@ -17,5 +17,8 @@ class BrandsTableSeeder extends Seeder
         \App\Brand::create([
             "name" => "Viettien"
         ]);
+        \App\Brand::create([
+            "name" => "Coolbell"
+        ]);
     }
 }

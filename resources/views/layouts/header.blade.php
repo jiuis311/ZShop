@@ -1,26 +1,16 @@
-<meta charset="utf-8">
-<title>ZShop</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
-<!-- bootstrap -->
-<link rel="icon" href="{{ asset('img/favicon.png') }}">
-<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-<link href="{{ asset('css/themes/bootstrappage.css') }}" rel="stylesheet"/>
-
-<!-- global styles -->
-<link href="{{ asset('css/themes/flexslider.css') }}" rel="stylesheet"/>
-<link href="{{ asset('css/themes/main.css') }}" rel="stylesheet"/>
-<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-
-<!-- scripts -->
-<script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/themes/superfish.js')}}"></script>
-<script src="{{asset('js/themes/jquery.scrolltotop.js')}}"></script>
-
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
+<title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<!--/tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--//tags -->
+<link href="css/elite-shop/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/elite-shop/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/elite-shop/font-awesome.css" rel="stylesheet">
+<link href="css/elite-shop/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+<!-- //for bootstrap working -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>

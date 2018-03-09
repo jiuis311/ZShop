@@ -12,10 +12,16 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         \App\Category::create([
-            'name' => 'Shirt'
+            'name' => 'Men'
         ]);
         \App\Category::create([
-            'name' => 'Pant'
+            'name' => 'Women'
+        ]);
+        \App\Category::create([
+            'name' => 'Bag'
+        ]);
+        \App\Category::create([
+            'name' => 'Footwear'
         ]);
     }
 }
