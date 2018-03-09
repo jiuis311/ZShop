@@ -104,20 +104,5 @@ class ManageUserController extends Controller
             'message' => 'Delete success'
         ]);
     }
-
-    public function updateImage(Request $request, $id) {
-        if (!$request->hasFile('img')) {
-            return redirect()->route('admin.user.show', [
-                'id' => $id,
-            ]);
-        }
-        $imgLink = $request->file('img')->store('public/images');
-        $imgLink = substr($imgLink, 7);
-        $data["image"] = $imgLink;
-        User::find($id)->update($data);
-        return redirect()->route('admin.user.show', [
-            'id' => $id,
-        ]);
-    }
 }
 

@@ -27,7 +27,11 @@ Route::prefix('admin')->group(function() {
          * Manage user
          */
         Route::resource('user', 'ManageUserController', ['as' => 'admin']);
+        /**
+         * Manage Product
+         */
         Route::resource('product', 'ManageProductController', ['as' => 'admin']);
+        Route::put('product/{id}/update-image', 'ProductInformationController@updateImage')->name('admin.product.update-image');
     });
 });
 

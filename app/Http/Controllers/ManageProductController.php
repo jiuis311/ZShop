@@ -42,6 +42,12 @@ class ManageProductController extends Controller
 
     public function store(StoreProductRequest $request) {
         $data = $request->all();
+        if ($request->hasFile('img')) {
+            $imgLink = $request->file('img')->store('public/images');
+            $imgLink = substr($imgLink, 7);
+            $data["image"] = $imgLink;
+        }
+        $data['price'] = str_replace('.', '', $data['price']);
         Product::create($data);
         return redirect()->route('admin.product.index');
     }
@@ -55,8 +61,10 @@ class ManageProductController extends Controller
 
     public function show($id) {
         $product = Product::findOrFail($id);
+        $imgs = explode(" ", $product->image);
         $data = [
             'product' => $product,
+            'imgs' => $imgs
         ];
         return view('admin.productmanage.show', $data);
     }

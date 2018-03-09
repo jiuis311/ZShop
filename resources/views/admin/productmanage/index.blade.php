@@ -6,11 +6,15 @@
         <h1>
             Product List
         </h1>
+
     </section>
 
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
+                <a href="{{ route('admin.product.create') }}"><button type="button" class="btn btn-success" ><i class="fa fa-fw fa-plus"></i>Add new</button></a>
+                <br/>
+                <br/>
                 <div class="box">
                 </div>
                 <!-- /.box-header -->
@@ -82,7 +86,6 @@
                 </div>
                 <!-- /.box-body -->
                 {{--Trigger add new modal--}}
-                <a href="{{ route('admin.product.create') }}"><button type="button" class="btn btn-success" ><i class="fa fa-fw fa-plus"></i>Add new</button></a>
                 {{--Add new modal--}}
             </div>
             <!-- /.box -->

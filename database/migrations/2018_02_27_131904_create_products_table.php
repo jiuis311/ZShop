@@ -20,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->text('description')->nullable();
+            $table->text('main_image')->nullable();
+            $table->text('image')->nullable();
             $table->double('price');
             $table->timestamps();
         });

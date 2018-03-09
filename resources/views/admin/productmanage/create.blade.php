@@ -6,6 +6,7 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Add new product</h3>
+                <a href="{{ route('admin.product.index') }}"><button class="btn btn-success pull-right"><i class="fa fa-cubes"></i> Product list</button></a>
             </div>
             <!-- /.box-header -->
 
@@ -45,6 +46,13 @@
                         <label for="">Price</label>
                         <input type="text" class="form-control" id="" placeholder="Enter price" name="price" autocomplete="off" onkeyup="splitInDots(this)" required>
                     </div>
+                    <div class="form-group">
+                        <label for="imgFile">Upload images</label><br>
+                        <img class="hidden" id="uploadImg" src="#" alt="your image" />
+                        <input class="hidden" type="file" id="imgFile" name="img">
+                        <button type="button" id="uploadImgBtn" class="btn btn-success"><i class="fa fa-fw fa-upload"></i>Upload</button>
+                        <p class="help-block">Upload profile picture</p>
+                    </div>
                 </div>
                 <!-- /.box-body -->
 
@@ -53,13 +61,33 @@
                 </div>
             </form>
         </div>
-        <a href="{{ route('admin.product.index') }}"><button class="btn btn-success pull-right"><i class="fa fa-cubes"></i> Product list</button></a>
     </section>
 
 @endsection
 
 @section('javascript')
     <script>
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#uploadImg').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(document).ready(function() {
+            $("#imgFile").change(function () {
+                $('#uploadImg').removeClass('hidden');
+                readURL(this);
+            });
+            $('#uploadImgBtn').on('click', function() {
+                $("#imgFile").trigger('click');
+            })
+        });
         function reverseNumber(input) {
             return [].map.call(input, function(x) {
                 return x;
@@ -82,15 +110,6 @@
             input.value = normal;
         }
 
-        function oneDot(input) {
-            var value = input.value,
-                value = plainNumber(value);
 
-            if (value.length > 3) {
-                value = value.substring(0, value.length - 3) + '.' + value.substring(value.length - 3, value.length);
-            }
-            console.log(value);
-            input.value = value;
-        }
     </script>
 @endsection
