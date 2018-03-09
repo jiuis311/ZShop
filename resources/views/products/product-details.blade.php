@@ -1,239 +1,424 @@
 @extends('layouts.master')
 
-@section('header-content')
-    <section class="header_text sub">
-        <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-        <h4><span>Product Detail</span></h4>
-    </section>
-@endsection
+@section('content')
+    <!--/single_page-->
+    <!-- /banner_bottom_agile_info -->
+    <div class="page-head_agile_info_w3l">
+        <div class="container">
+            <h3>Single <span>Page </span></h3>
+            <!--/w3_short-->
+            <div class="services-breadcrumb">
+                <div class="agile_inner_breadcrumb">
 
-@section('main-content')
-    <section class="main-content">
-        <div class="row">
-            <div class="span9">
-                <div class="row">
-                    <div class="span4">
-                        <a href="themes/images/ladies/1.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/ladies/1.jpg"></a>
-                        <ul class="thumbnails small">
-                            <li class="span1">
-                                <a href="themes/images/ladies/2.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 2"><img src="themes/images/ladies/2.jpg" alt=""></a>
+                    <ul class="w3_short">
+                        <li><a href="index.html">Home</a><i>|</i></li>
+                        <li>Single Page</li>
+                    </ul>
+                </div>
+            </div>
+            <!--//w3_short-->
+        </div>
+    </div>
+
+    <!-- banner-bootom-w3-agileits -->
+    <div class="banner-bootom-w3-agileits">
+        <div class="container">
+            <div class="col-md-4 single-right-left ">
+                <div class="grid images_3_of_2">
+                    <div class="flexslider">
+
+                        <ul class="slides">
+                            <li data-thumb="{{ asset('img/elite-shop/d2.jpg') }}">
+                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d2.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li class="span1">
-                                <a href="themes/images/ladies/3.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 3"><img src="themes/images/ladies/3.jpg" alt=""></a>
+                            <li data-thumb="{{ asset('img/elite-shop/d1.jpg') }}">
+                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d1.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li class="span1">
-                                <a href="themes/images/ladies/4.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 4"><img src="themes/images/ladies/4.jpg" alt=""></a>
-                            </li>
-                            <li class="span1">
-                                <a href="themes/images/ladies/5.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 5"><img src="themes/images/ladies/5.jpg" alt=""></a>
+                            <li data-thumb="{{ asset('img/elite-shop/d3.jpg') }}">
+                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d3.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
                         </ul>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="span5">
-                        <address>
-                            <strong>Brand:</strong> <span>Apple</span><br>
-                            <strong>Product Code:</strong> <span>Product 14</span><br>
-                            <strong>Reward Points:</strong> <span>0</span><br>
-                            <strong>Availability:</strong> <span>Out Of Stock</span><br>
-                        </address>
-                        <h4><strong>Price: $587.50</strong></h4>
+                </div>
+            </div>
+            <div class="col-md-8 single-right-left simpleCart_shelfItem">
+                <h3>Big Wing Sneakers  (Navy)</h3>
+                <p><span class="item_price">$650</span> <del>- $900</del></p>
+                <div class="rating1">
+						<span class="starRating">
+							<input id="rating5" type="radio" name="rating" value="5">
+							<label for="rating5">5</label>
+							<input id="rating4" type="radio" name="rating" value="4">
+							<label for="rating4">4</label>
+							<input id="rating3" type="radio" name="rating" value="3" checked="">
+							<label for="rating3">3</label>
+							<input id="rating2" type="radio" name="rating" value="2">
+							<label for="rating2">2</label>
+							<input id="rating1" type="radio" name="rating" value="1">
+							<label for="rating1">1</label>
+						</span>
+                </div>
+                <div class="description">
+                    <h5>Check delivery, payment options and charges at your location</h5>
+                    <form action="#" method="post">
+                        <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
+                        <input type="submit" value="Check">
+                    </form>
+                </div>
+                <div class="color-quality">
+                    <div class="color-quality-right">
+                        <h5>Quality :</h5>
+                        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                            <option value="null">5 Qty</option>
+                            <option value="null">6 Qty</option>
+                            <option value="null">7 Qty</option>
+                            <option value="null">10 Qty</option>
+                        </select>
                     </div>
-                    <div class="span5">
-                        <form class="form-inline">
-                            <label class="checkbox">
-                                <input type="checkbox" value=""> Option one is this and that
-                            </label>
-                            <br/>
-                            <label class="checkbox">
-                                <input type="checkbox" value=""> Be sure to include why it's great
-                            </label>
-                            <p>&nbsp;</p>
-                            <label>Qty:</label>
-                            <input type="text" class="span1" placeholder="1">
-                            <button class="btn btn-inverse" type="submit">Add to cart</button>
+                </div>
+                <div class="occasional">
+                    <h5>Types :</h5>
+                    <div class="colr ert">
+                        <label class="radio"><input type="radio" name="radio" checked=""><i></i>Casual Shoes</label>
+                    </div>
+                    <div class="colr">
+                        <label class="radio"><input type="radio" name="radio"><i></i>Sneakers </label>
+                    </div>
+                    <div class="colr">
+                        <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="occasion-cart">
+                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="business" value=" ">
+                                <input type="hidden" name="item_name" value="Wing Sneakers">
+                                <input type="hidden" name="amount" value="650.00">
+                                <input type="hidden" name="discount_amount" value="1.00">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="return" value=" ">
+                                <input type="hidden" name="cancel_return" value=" ">
+                                <input type="submit" name="submit" value="Add to cart" class="button">
+                            </fieldset>
                         </form>
                     </div>
+
                 </div>
-                <div class="row">
-                    <div class="span9">
-                        <ul class="nav nav-tabs" id="myTab">
-                            <li class="active"><a href="#home">Description</a></li>
-                            <li class=""><a href="#profile">Additional Information</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="home">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem</div>
-                            <div class="tab-pane" id="profile">
-                                <table class="table table-striped shop_attributes">
-                                    <tbody>
-                                    <tr class="">
-                                        <th>Size</th>
-                                        <td>Large, Medium, Small, X-Large</td>
-                                    </tr>
-                                    <tr class="alt">
-                                        <th>Colour</th>
-                                        <td>Orange, Yellow</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
+                    <li class="share">Share On : </li>
+                    <li><a href="#" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+                    <li><a href="#" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+                    <li><a href="#" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+                    <li><a href="#" class="pinterest">
+                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+                </ul>
+
+            </div>
+            <div class="clearfix"> </div>
+            <!-- /new_arrivals -->
+            <div class="responsive_tabs_agileits">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        <li>Description</li>
+                        <li>Reviews</li>
+                        <li>Information</li>
+                    </ul>
+                    <div class="resp-tabs-container">
+                        <!--/tab_one-->
+                        <div class="tab1">
+
+                            <div class="single_page_agile_its_w3ls">
+                                <h6>Lorem ipsum dolor sit amet</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                                <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="span9">
-                        <br>
-                        <h4 class="title">
-                            <span class="pull-left"><span class="text"><strong>Related</strong> Products</span></span>
-                            <span class="pull-right">
-										<a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>
-									</span>
-                        </h4>
-                        <div id="myCarousel-1" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="active item">
-                                    <ul class="thumbnails listing-products">
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <span class="sale_tag"></span>
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/6.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}" class="title">Wuam ultrices rutrum</a><br/>
-                                                <a href="#" class="category">Suspendisse aliquet</a>
-                                                <p class="price">$341</p>
-                                            </div>
-                                        </li>
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <span class="sale_tag"></span>
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/5.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                                                <a href="#" class="category">Phasellus consequat</a>
-                                                <p class="price">$341</p>
-                                            </div>
-                                        </li>
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/4.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}" class="title">Praesent tempor sem</a><br/>
-                                                <a href="#" class="category">Erat gravida</a>
-                                                <p class="price">$28</p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                        <!--//tab_one-->
+                        <div class="tab2">
+
+                            <div class="single_page_agile_its_w3ls">
+                                <div class="bootstrap-tab-text-grids">
+                                    <div class="bootstrap-tab-text-grid">
+                                        <div class="bootstrap-tab-text-grid-left">
+                                            <img src="{{ asset('img/elite-shop/t1.jpg') }}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="bootstrap-tab-text-grid-right">
+                                            <ul>
+                                                <li><a href="#">Admin</a></li>
+                                                <li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                                                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+                                                vel eum iure reprehenderit.</p>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                    <div class="add-review">
+                                        <h4>add a review</h4>
+                                        <form action="#" method="post">
+                                            <input type="text" name="Name" required="Name">
+                                            <input type="email" name="Email" required="Email">
+                                            <textarea name="Message" required=""></textarea>
+                                            <input type="submit" value="SEND">
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="item">
-                                    <ul class="thumbnails listing-products">
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <span class="sale_tag"></span>
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/1.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                                                <a href="#" class="category">Phasellus consequat</a>
-                                                <p class="price">$341</p>
-                                            </div>
-                                        </li>
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}">Praesent tempor sem</a><br/>
-                                                <a href="#" class="category">Erat gravida</a>
-                                                <p class="price">$28</p>
-                                            </div>
-                                        </li>
-                                        <li class="span3">
-                                            <div class="product-box">
-                                                <span class="sale_tag"></span>
-                                                <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/3.jpg"></a><br/>
-                                                <a href="{{ route('product.detail') }}" class="title">Wuam ultrices rutrum</a><br/>
-                                                <a href="#" class="category">Suspendisse aliquet</a>
-                                                <p class="price">$341</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab3">
+
+                            <div class="single_page_agile_its_w3ls">
+                                <h6>Big Wing Sneakers (Navy)</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                                <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="span3 col">
-                <div class="block">
-                    <ul class="nav nav-list">
-                        <li class="nav-header">SUB CATEGORIES</li>
-                        <li><a href="{{ route('products') }}">Nullam semper elementum</a></li>
-                        <li class="active"><a href="{{ route('products') }}">Phasellus ultricies</a></li>
-                        <li><a href="{{ route('products') }}">Donec laoreet dui</a></li>
-                        <li><a href="{{ route('products') }}">Nullam semper elementum</a></li>
-                        <li><a href="{{ route('products') }}">Phasellus ultricies</a></li>
-                        <li><a href="{{ route('products') }}">Donec laoreet dui</a></li>
-                    </ul>
-                    <br/>
-                    <ul class="nav nav-list below">
-                        <li class="nav-header">MANUFACTURES</li>
-                        <li><a href="{{ route('products') }}">Adidas</a></li>
-                        <li><a href="{{ route('products') }}">Nike</a></li>
-                        <li><a href="{{ route('products') }}">Dunlop</a></li>
-                        <li><a href="{{ route('products') }}">Yamaha</a></li>
-                    </ul>
-                </div>
-                <div class="block">
-                    <h4 class="title">
-                        <span class="pull-left"><span class="text">Randomize</span></span>
-                        <span class="pull-right">
-									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-								</span>
-                    </h4>
-                    <div id="myCarousel" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/7.jpg"></a><br/>
-                                            <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                                            <a href="#" class="category">Suspendisse aliquet</a>
-                                            <p class="price">$261</p>
-                                        </div>
-                                    </li>
-                                </ul>
+            <!-- //new_arrivals -->
+            <!--/slider_owl-->
+
+            <div class="w3_agile_latest_arrivals">
+                <h3 class="wthree_text_info">Featured <span>Arrivals</span></h3>
+                <div class="col-md-3 product-men single">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/w2.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/w2.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
                             </div>
-                            <div class="item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/8.jpg"></a><br/>
-                                            <a href="{{ route('product.detail') }}" class="title">Tempor sem sodales</a><br/>
-                                            <a href="#" class="category">Urna nec lectus mollis</a>
-                                            <p class="price">$134</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Sleeveless Solid Blue Top</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$140.99</span>
+                                <del>$189.71</del>
                             </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Sleeveless Solid Blue Top">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="block">
-                    <h4 class="title"><strong>Best</strong> Seller</h4>
-                    <ul class="small-product">
-                        <li>
-                            <a href="#" title="Praesent tempor sem sodales">
-                                <img src="themes/images/ladies/1.jpg" alt="Praesent tempor sem sodales">
-                            </a>
-                            <a href="#">Praesent tempor sem</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Luctus quam ultrices rutrum">
-                                <img src="themes/images/ladies/2.jpg" alt="Luctus quam ultrices rutrum">
-                            </a>
-                            <a href="#">Luctus quam ultrices rutrum</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Fusce id molestie massa">
-                                <img src="themes/images/ladies/3.jpg" alt="Fusce id molestie massa">
-                            </a>
-                            <a href="#">Fusce id molestie massa</a>
-                        </li>
-                    </ul>
+                <div class="col-md-3 product-men single">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/w4.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/w4.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Black Basic Shorts</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$120.99</span>
+                                <del>$189.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Black Basic Shorts">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-3 product-men single">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/s6.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/s6.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Aero Canvas Loafers  </a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$120.99</span>
+                                <del>$199.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Aero Canvas Loafers">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men single">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/w7.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/w7.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Ankle Length Socks</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$100.99</span>
+                                <del>$159.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Ankle Length Socks">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+                <!--//slider_owl-->
             </div>
         </div>
-    </section>
+    </div>
+    <!--//single_page-->
+    <!--/grids-->
+    <div class="coupons">
+        <div class="coupons-grids text-center">
+            <div class="w3layouts_mail_grid">
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>FREE SHIPPING</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>24/7 SUPPORT</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>MONEY BACK GUARANTEE</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>FREE GIFT COUPONS</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    <!--grids-->    
+@endsection
+
+@section('javascript')
+    <!-- FlexSlider -->
+    <script src="{{ asset('js/elite-shop/jquery.flexslider.js') }}"></script>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!-- //FlexSlider-->
+
+    <!-- single -->
+    <script src="{{ asset('js/elite-shop/imagezoom.js') }}"></script>
+    <!-- single -->
 @endsection

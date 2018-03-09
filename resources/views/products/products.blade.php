@@ -1,187 +1,703 @@
 @extends('layouts.master')
 
-@section('header-content')
-    <section class="header_text sub">
-        <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-        <h4><span>New products</span></h4>
-    </section>
-@endsection
+@section('content')
+    <!-- /banner_bottom_agile_info -->
+    <div class="page-head_agile_info_w3l">
+        <div class="container">
+            <h3>Men's <span>Wear  </span></h3>
+            <!--/w3_short-->
+            <div class="services-breadcrumb">
+                <div class="agile_inner_breadcrumb">
 
-@section('main-content')
-    <section class="main-content">
-
-        <div class="row">
-            <div class="span9">
-                <ul class="thumbnails listing-products">
-                    <li class="span3">
-                        <div class="product-box">
-                            <span class="sale_tag"></span>
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/9.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                            <a href="#" class="category">Phasellus consequat</a>
-                            <p class="price">$341</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/8.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Praesent tempor sem</a><br/>
-                            <a href="#" class="category">Erat gravida</a>
-                            <p class="price">$28</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <span class="sale_tag"></span>
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/7.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Wuam ultrices rutrum</a><br/>
-                            <a href="#" class="category">Suspendisse aliquet</a>
-                            <p class="price">$341</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <span class="sale_tag"></span>
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/6.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Praesent tempor sem sodales</a><br/>
-                            <a href="#" class="category">Nam imperdiet</a>
-                            <p class="price">$49</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/1.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                            <a href="#" class="category">Congue diam congue</a>
-                            <p class="price">$35</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Tempor sem sodales</a><br/>
-                            <a href="#" class="category">Gravida placerat</a>
-                            <p class="price">$61</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/3.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Quam ultrices rutrum</a><br/>
-                            <a href="#" class="category">Orci et nisl iaculis</a>
-                            <p class="price">$233</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/4.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Tempor sem sodales</a><br/>
-                            <a href="#" class="category">Urna nec lectus mollis</a>
-                            <p class="price">$134</p>
-                        </div>
-                    </li>
-                    <li class="span3">
-                        <div class="product-box">
-                            <a href="{{ route('product.detail') }}"><img alt="" src="themes/images/ladies/5.jpg"></a><br/>
-                            <a href="{{ route('product.detail') }}" class="title">Luctus quam ultrices</a><br/>
-                            <a href="#" class="category">Suspendisse aliquet</a>
-                            <p class="price">$261</p>
-                        </div>
-                    </li>
-                </ul>
-                <hr>
-                <div class="pagination pagination-small pagination-centered">
-                    <ul>
-                        <li><a href="#">Prev</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">Next</a></li>
+                    <ul class="w3_short">
+                        <li><a href="{{ route('home') }}">Home</a><i>|</i></li>
+                        <li>Men's Wear</li>
                     </ul>
                 </div>
             </div>
-            <div class="span3 col">
-                <div class="block">
-                    <ul class="nav nav-list">
-                        <li class="nav-header">SUB CATEGORIES</li>
-                        <li><a href="{{ route('products') }}">Nullam semper elementum</a></li>
-                        <li class="active"><a href="{{ route('products') }}">Phasellus ultricies</a></li>
-                        <li><a href="{{ route('products') }}">Donec laoreet dui</a></li>
-                        <li><a href="{{ route('products') }}">Nullam semper elementum</a></li>
-                        <li><a href="{{ route('products') }}">Phasellus ultricies</a></li>
-                        <li><a href="{{ route('products') }}">Donec laoreet dui</a></li>
-                    </ul>
-                    <br/>
-                    <ul class="nav nav-list below">
-                        <li class="nav-header">MANUFACTURES</li>
-                        <li><a href="{{ route('products') }}">Adidas</a></li>
-                        <li><a href="{{ route('products') }}">Nike</a></li>
-                        <li><a href="{{ route('products') }}">Dunlop</a></li>
-                        <li><a href="{{ route('products') }}">Yamaha</a></li>
+            <!--//w3_short-->
+        </div>
+    </div>
+
+    <!-- banner-bootom-w3-agileits -->
+    <div class="banner-bootom-w3-agileits">
+        <div class="container">
+            <!-- mens -->
+            <div class="col-md-4 products-left">
+                <div class="filter-price">
+                    <h3>Filter By <span>Price</span></h3>
+                    <ul class="dropdown-menu6">
+                        <li>
+                            <div id="slider-range"></div>
+                            <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                        </li>
                     </ul>
                 </div>
-                <div class="block">
-                    <h4 class="title">
-                        <span class="pull-left"><span class="text">Randomize</span></span>
-                        <span class="pull-right">
-									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-								</span>
-                    </h4>
-                    <div id="myCarousel" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <span class="sale_tag"></span>
-                                            <img alt="" src="themes/images/ladies/1.jpg"><br/>
-                                            <a href="{{ route('product.detail') }}" class="title">Fusce id molestie massa</a><br/>
-                                            <a href="#" class="category">Suspendisse aliquet</a>
-                                            <p class="price">$261</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                <div class="css-treeview">
+                    <h4>Categories</h4>
+                    <ul class="tree-list-pad">
+                        <li><input type="checkbox" checked="checked" id="item-0" /><label for="item-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Men's Wear</label>
+                            <ul>
+                                <li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Ethnic Wear</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Caps</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                        <li><a href="{{ route('products') }}">Trousers</a></li>
+                                    </ul>
+                                </li>
+                                <li><input type="checkbox"  id="item-0-1" /><label for="item-0-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Party Wear</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Caps</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                        <li><a href="{{ route('products') }}">Trousers</a></li>
+                                    </ul>
+                                </li>
+                                <li><input type="checkbox"  id="item-0-2" /><label for="item-0-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Casual Wear</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Caps</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                        <li><a href="{{ route('products') }}">Trousers</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><input type="checkbox" id="item-1" checked="checked" /><label for="item-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Best Collections</label>
+                            <ul>
+                                <li><input type="checkbox" checked="checked" id="item-1-0" /><label for="item-1-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> New Arrivals</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><input type="checkbox" checked="checked" id="item-2" /><label for="item-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Best Offers</label>
+                            <ul>
+                                <li><input type="checkbox"  id="item-2-0" /><label for="item-2-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Summer Discount Sales</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                    </ul>
+                                </li>
+                                <li><input type="checkbox" id="item-2-1" /><label for="item-2-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Exciting Offers</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                    </ul>
+                                </li>
+                                <li><input type="checkbox" id="item-2-2" /><label for="item-2-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Flat Discounts</label>
+                                    <ul>
+                                        <li><a href="{{ route('products') }}">Shirts</a></li>
+                                        <li><a href="{{ route('products') }}">Shoes</a></li>
+                                        <li><a href="{{ route('products') }}">Pants</a></li>
+                                        <li><a href="{{ route('products') }}">SunGlasses</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-poll">
+                    <h4>Community Poll</h4>
+                    <div class="swit form">
+                        <form>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>More convenient for shipping and delivery</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Lower Price</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Track your item</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Bigger Choice</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>More colors to choose</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Secured Payment</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Money back guaranteed</label> </div></div>
+                            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Others</label> </div></div>
+                            <input type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-8 products-right">
+                <h5>Product <span>Compare(0)</span></h5>
+                <div class="sort-grid">
+                    <div class="sorting">
+                        <h6>Sort By</h6>
+                        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                            <option value="null">Default</option>
+                            <option value="null">Name(A - Z)</option>
+                            <option value="null">Name(Z - A)</option>
+                            <option value="null">Price(High - Low)</option>
+                            <option value="null">Price(Low - High)</option>
+                            <option value="null">Model(A - Z)</option>
+                            <option value="null">Model(Z - A)</option>
+                        </select>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="sorting">
+                        <h6>Showing</h6>
+                        <select id="country2" onchange="change_country(this.value)" class="frm-field required sect">
+                            <option value="null">7</option>
+                            <option value="null">14</option>
+                            <option value="null">28</option>
+                            <option value="null">35</option>
+                        </select>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="men-wear-top">
+
+                    <div  id="top" class="callbacks_container">
+                        <ul class="rslides" id="slider3">
+                            <li>
+                                <img class="img-responsive" src="{{ asset('img/elite-shop/banner2.jpg') }}" alt=" "/>
+                            </li>
+                            <li>
+                                <img class="img-responsive" src="{{ asset('img/elite-shop/banner5.jpg') }}" alt=" "/>
+                            </li>
+                            <li>
+                                <img class="img-responsive" src="{{ asset('img/elite-shop/banner2.jpg') }}" alt=" "/>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="men-wear-bottom">
+                    <div class="col-sm-4 men-wear-left">
+                        <img class="img-responsive" src="{{ asset('img/elite-shop/bb2.jpg') }}" alt=" " />
+                    </div>
+                    <div class="col-sm-8 men-wear-right">
+                        <h4>Exclusive Men's <span>Collections</span></h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                            ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                            odit aut fugit. </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-4 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m8.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m8.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
                             </div>
-                            <div class="item">
-                                <ul class="thumbnails listing-products">
-                                    <li class="span3">
-                                        <div class="product-box">
-                                            <img alt="" src="themes/images/ladies/2.jpg"><br/>
-                                            <a href="{{ route('product.detail') }}" class="title">Tempor sem sodales</a><br/>
-                                            <a href="#" class="category">Urna nec lectus mollis</a>
-                                            <p class="price">$134</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Party Men's Blazer</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$260.99</span>
+                                <del>$390.71</del>
                             </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Party Men's Blazer">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="block">
-                    <h4 class="title"><strong>Best</strong> Seller</h4>
-                    <ul class="small-product">
-                        <li>
-                            <a href="#" title="Praesent tempor sem sodales">
-                                <img src="themes/images/ladies/3.jpg" alt="Praesent tempor sem sodales">
-                            </a>
-                            <a href="#">Praesent tempor sem</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Luctus quam ultrices rutrum">
-                                <img src="themes/images/ladies/4.jpg" alt="Luctus quam ultrices rutrum">
-                            </a>
-                            <a href="#">Luctus quam ultrices rutrum</a>
-                        </li>
-                        <li>
-                            <a href="#" title="Fusce id molestie massa">
-                                <img src="themes/images/ladies/5.jpg" alt="Fusce id molestie massa">
-                            </a>
-                            <a href="#">Fusce id molestie massa</a>
-                        </li>
-                    </ul>
+                <div class="col-md-4 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m7.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m7.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Analog Watch</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$160.99</span>
+                                <del>$290.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Analog Watch">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-4 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/s1.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/s1.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Running Shoes</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$80.99</span>
+                                <del>$89.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="business" value=" ">
+                                        <input type="hidden" name="item_name" value="Running Shoes">
+                                        <input type="hidden" name="amount" value="30.99">
+                                        <input type="hidden" name="discount_amount" value="1.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="return" value=" ">
+                                        <input type="hidden" name="cancel_return" value=" ">
+                                        <input type="submit" name="submit" value="Add to cart" class="button">
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="single-pro">
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m1.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m1.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Formal Blue Shirt</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$45.99</span>
+                                <del>$69.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Formal Blue Shirt" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m2.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m2.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Gabi Full Sleeve Sweatshirt</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$45.99</span>
+                                <del>$69.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Sweatshirt" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m3.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m3.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Dark Blue Track Pants</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$80.99</span>
+                                <del>$89.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Dark Blue Track Pants" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m4.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m4.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Round Neck Black T-Shirt</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$190.99</span>
+                                <del>$159.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Black T-Shirt" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m5.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m5.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Men's Black Jeans</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$60.99</span>
+                                <del>$90.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Men's Black Jeans" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m7.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m7.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Analog Watch</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$160.99</span>
+                                <del>$290.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Analog Watch" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m6.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m6.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Reversible Belt</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$30.99</span>
+                                <del>$50.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Reversible Belt" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="{{ asset('img/elite-shop/m8.jpg') }}" alt="" class="pro-image-front">
+                            <img src="{{ asset('img/elite-shop/m8.jpg') }}" alt="" class="pro-image-back">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="{{ route('product.detail') }}" class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                        <div class="item-info-product ">
+                            <h4><a href="{{ route('product.detail') }}">Party Men's Blazer</a></h4>
+                            <div class="info-product-price">
+                                <span class="item_price">$260.99</span>
+                                <del>$390.71</del>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="Party Men's Blazer" />
+                                        <input type="hidden" name="amount" value="30.99" />
+                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />
+                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- //mens -->
+    <!--/grids-->
+    <div class="coupons">
+        <div class="coupons-grids text-center">
+            <div class="w3layouts_mail_grid">
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>FREE SHIPPING</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>24/7 SUPPORT</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>MONEY BACK GUARANTEE</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>FREE GIFT COUPONS</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    <!--grids-->
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/elite-shop/responsiveslides.min.js') }}"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
 @endsection

@@ -36,4 +36,8 @@ class HomeController extends Controller
     public function checkout() {
         return view('checkout');
     }
+
+    public function about() {
+        return view('about');
+    }
 }

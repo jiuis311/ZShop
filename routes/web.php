@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/home', function (){
+    return view('index');
+});
+
 Route::prefix('admin')->group(function() {
     //Admin Log in
     Route::get('login', 'Auth\AdminController@loginForm')->name('admin.login-form');
@@ -36,13 +40,12 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::get('/products', 'HomeController@products')->name('products');
-Route::get('/product-details', 'HomeController@productDetail')->name('product.detail');
+Route::get('/product-detail', 'HomeController@productDetail')->name('product.detail');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/cart', 'HomeController@cart')->name('cart');
 Route::get('/checkout', 'HomeController@checkout')->name('checkout');
+Route::get('/about', 'HomeController@about')->name('about');
 
 Auth::routes();
 
-Route::get('/home', function (){
-    return view('index');
-});
+

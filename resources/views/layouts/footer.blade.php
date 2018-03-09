@@ -1,10 +1,10 @@
 <!-- js -->
-<script type="text/javascript" src="js/elite-shop/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/elite-shop/jquery-2.1.4.min.js') }}"></script>
 <!-- //js -->
-<script src="js/elite-shop/modernizr.custom.js"></script>
+<script src="{{ asset('js/elite-shop/modernizr.custom.js') }}"></script>
 <!-- Custom-JavaScript-File-Links -->
 <!-- cart-js -->
-<script src="js/elite-shop/minicart.min.js"></script>
+<script src="{{ asset('js/elite-shop/minicart.min.js') }}"></script>
 <script>
     // Mini Cart
     paypal.minicart.render({
@@ -16,9 +16,10 @@
     }
 </script>
 
+
 <!-- //cart-js -->
 <!-- script for responsive tabs -->
-<script src="js/elite-shop/easy-responsive-tabs.js"></script>
+<script src="{{ asset('js/elite-shop/easy-responsive-tabs.js') }}"></script>
 <script>
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
@@ -43,15 +44,15 @@
 </script>
 <!-- //script for responsive tabs -->
 <!-- stats -->
-<script src="js/elite-shop/jquery.waypoints.min.js"></script>
-<script src="js/elite-shop/jquery.countup.js"></script>
+<script src="{{ asset('js/elite-shop/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('js/elite-shop/jquery.countup.js') }}"></script>
 <script>
     $('.counter').countUp();
 </script>
 <!-- //stats -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/elite-shop/move-top.js"></script>
-<script type="text/javascript" src="js/elite-shop/jquery.easing.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/elite-shop/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/elite-shop/jquery.easing.min.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){
@@ -80,7 +81,7 @@
 
 
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/elite-shop/bootstrap.js"></script>
+<script type="text/javascript" src="{{ asset('js/elite-shop/bootstrap.js') }}"></script>
 <script>
     $(function(){
         $('#logout').click(function() {
