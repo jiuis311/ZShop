@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\User;
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +21,14 @@ class HomeController extends Controller
 
     public function products() {
         return view('products.products');
+    }
+
+    public function productDetailId($id) {
+        $product = Product::where('code', $id);
+        $data = [
+            'product' => $product
+        ];
+        return view('products.product-details-id', $data);
     }
 
     public function productDetail() {

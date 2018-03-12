@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreUserRequest;
-use App\User;
+use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ManageUserController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class ManageUserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('updated_at','desc')->paginate(config('app.user_pagination'));
+        $categories = Category::orderBy('updated_at','desc')->paginate(config('app.user_pagination'));
         $data = [
-            'users' => $users,
+            'categories' => $categories
         ];
-        return view('admin.usermanage.index', $data);
+        return view('admin.category.index', $data);
     }
 
     /**
@@ -29,21 +29,20 @@ class ManageUserController extends Controller
      */
     public function create()
     {
-        return view('admin.usermanage.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\StoreUserRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUserRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
-        $data['password'] = bcrypt($data['password']);
-        User::create($data);
-        return redirect()->route('admin.user.index');
+        Category::create($data);
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -54,11 +53,7 @@ class ManageUserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        $data = [
-            'user' => $user,
-        ];
-        return view('admin.usermanage.show', $data);
+        //
     }
 
     /**
@@ -69,11 +64,7 @@ class ManageUserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-        $data = [
-            'user' => $user,
-        ];
-        return view('admin.usermanage.edit', $data);
+        //
     }
 
     /**
@@ -85,10 +76,7 @@ class ManageUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $data = array_slice($data, 2);
-        User::where('id',$id)->update($data);
-        return redirect()->route('admin.user.index');
+        //
     }
 
     /**
@@ -99,10 +87,9 @@ class ManageUserController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrFail($id)->delete();
+        Category::findOrFail($id)->delete();
         return response()->json([
             'message' => 'Delete success'
         ]);
     }
 }
-

@@ -17,11 +17,5 @@ class CategoriesTableSeeder extends Seeder
         \App\Category::create([
             'name' => 'Women'
         ]);
-        \App\Category::create([
-            'name' => 'Bag'
-        ]);
-        \App\Category::create([
-            'name' => 'Footwear'
-        ]);
     }
 }

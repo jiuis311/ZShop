@@ -12,7 +12,7 @@
 
                     <ul class="w3_short">
                         <li><a href="{{ route('home') }}">Home</a><i>|</i></li>
-                        <li>Single Page</li>
+                        <li>Product</li>
                     </ul>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                     <div class="flexslider">
 
                         <ul class="slides">
-                            <li data-thumb="{{ asset('img/elite-shop/d2.jpg') }}">
-                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d2.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+                            <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
+                                <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="{{ asset('img/elite-shop/d1.jpg') }}">
-                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d1.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+                            <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
+                                <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="{{ asset('img/elite-shop/d3.jpg') }}">
-                                <div class="thumb-image"> <img src="{{ asset('img/elite-shop/d3.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+                            <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
+                                <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
                         </ul>
                         <div class="clearfix"></div>
@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="col-md-8 single-right-left simpleCart_shelfItem">
-                <h3>Big Wing Sneakers  (Navy)</h3>
-                <p><span class="item_price">$650</span> <del>- $900</del></p>
+                <h3>{{ $product->name }}</h3>
+                <p><span class="item_price">${{ $product->price }}</span></p>
                 <div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
@@ -59,37 +59,6 @@
 							<label for="rating1">1</label>
 						</span>
                 </div>
-                <div class="description">
-                    <h5>Check delivery, payment options and charges at your location</h5>
-                    <form action="#" method="post">
-                        <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
-                        <input type="submit" value="Check">
-                    </form>
-                </div>
-                <div class="color-quality">
-                    <div class="color-quality-right">
-                        <h5>Quality :</h5>
-                        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                            <option value="null">5 Qty</option>
-                            <option value="null">6 Qty</option>
-                            <option value="null">7 Qty</option>
-                            <option value="null">10 Qty</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="occasional">
-                    <h5>Types :</h5>
-                    <div class="colr ert">
-                        <label class="radio"><input type="radio" name="radio" checked=""><i></i>Casual Shoes</label>
-                    </div>
-                    <div class="colr">
-                        <label class="radio"><input type="radio" name="radio"><i></i>Sneakers </label>
-                    </div>
-                    <div class="colr">
-                        <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
                 <div class="occasion-cart">
                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                         <form action="#" method="post">
@@ -97,17 +66,17 @@
                                 <input type="hidden" name="cmd" value="_cart">
                                 <input type="hidden" name="add" value="1">
                                 <input type="hidden" name="business" value=" ">
-                                <input type="hidden" name="item_name" value="Wing Sneakers">
-                                <input type="hidden" name="amount" value="650.00">
-                                <input type="hidden" name="discount_amount" value="1.00">
+                                <input type="hidden" name="item_name" value="{{ $product->name  }}">
+                                <input type="hidden" name="amount" value="{{ $product->price }}">
+                                <input type="hidden" name="discount_amount" value="0">
                                 <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="code" value="{{ $product->code }}"
                                 <input type="hidden" name="return" value=" ">
                                 <input type="hidden" name="cancel_return" value=" ">
                                 <input type="submit" name="submit" value="Add to cart" class="button">
                             </fieldset>
                         </form>
                     </div>
-
                 </div>
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
                     <li class="share">Share On : </li>
@@ -140,9 +109,8 @@
                         <div class="tab1">
 
                             <div class="single_page_agile_its_w3ls">
-                                <h6>Lorem ipsum dolor sit amet</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
-                                <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                                <h6>Description</h6>
+                                <p>{{ $product->description }}</p>
                             </div>
                         </div>
                         <!--//tab_one-->
@@ -181,7 +149,7 @@
                         <div class="tab3">
 
                             <div class="single_page_agile_its_w3ls">
-                                <h6>Big Wing Sneakers (Navy)</h6>
+                                <h6>{{ $product->name }}</h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                                 <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                             </div>

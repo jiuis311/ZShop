@@ -211,4 +211,5 @@ return [
 
     ],
 
+    'user_pagination' => 10,
 ];

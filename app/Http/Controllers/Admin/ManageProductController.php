@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
@@ -22,7 +23,7 @@ class ManageProductController extends Controller
         $products = Product::orderBy('updated_at','desc')->paginate(config('app.user_pagination'));
         foreach ($products as $product) {
             $product->brand = Brand::find($product->brand_id);
-            $product->category = Brand::find($product->category_id);
+            $product->category = Category::find($product->category_id);
         }
         $data = [
             'products' => $products,

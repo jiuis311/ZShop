@@ -49,7 +49,7 @@
 <div id="wrapper" class="container">
     <section class="navbar main-menu">
         <div class="navbar-inner main-menu">
-            <a href="index.html" class="logo pull-left"><img src="{{ asset('img/themes/logo.png') }}" class="site_logo" alt=""></a>
+            <a href="{{ route('home') }}" class="logo pull-left"><img src="{{ asset('img/themes/logo.png') }}" class="site_logo" alt=""></a>
             <nav id="menu" class="pull-right">
                 <ul>
                     <li><a href="./{{ route('products') }}">Woman</a>
@@ -334,7 +334,7 @@
             <div class="span3">
                 <h4>Navigation</h4>
                 <ul class="nav">
-                    <li><a href="./index.html">Homepage</a></li>
+                    <li><a href="./{{ route('home') }}">Homepage</a></li>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contac Us</a></li>
                     <li><a href="./{{ route('cart') }}">Your Cart</a></li>

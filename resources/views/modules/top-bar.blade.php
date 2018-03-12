@@ -59,10 +59,21 @@
 <div class="header" id="home">
     <div class="container">
         <ul>
-            <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
-            <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
+            @if (!Auth::guard()->check())
+                <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
+                <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
+            @else
+                <li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i> My account </a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="post" class="hidden">
+                        @csrf
+                        <button class="hidden" id="logout-btn-hidden" type="submit"></button>
+                    </form>
+                    <a href="#" id="logout-btn"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> Log out </a>
+                </li>
+            @endif
             <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
-            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
         </ul>
     </div>
 </div>
@@ -191,15 +202,16 @@
             <div class="modal-body modal-body-sub_agile">
                 <div class="col-md-8 modal_body_left modal_body_left1">
                     <h3 class="agileinfo_sign">Sign In <span>Now</span></h3>
-                    <form action="#" method="post">
-                        <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="Name" required="">
-                            <label>Name</label>
+                    <form action="{{ route('login') }}" method="post">
+                        @csrf
+                        <div class="styled-input">
+                            <input type="email" name="email" required="">
+                            <label>Email</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="email" name="Email" required="">
-                            <label>Email</label>
+                            <input type="password" name="password" required="">
+                            <label>Password</label>
                             <span></span>
                         </div>
                         <input type="submit" value="Sign In">
@@ -243,14 +255,15 @@
             <div class="modal-body modal-body-sub_agile">
                 <div class="col-md-8 modal_body_left modal_body_left1">
                     <h3 class="agileinfo_sign">Sign Up <span>Now</span></h3>
-                    <form action="#" method="post">
+                    <form action="{{ route('register') }}" method="post">
+                        @csrf
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="Name" required="">
+                            <input type="text" name="name" required="">
                             <label>Name</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="email" name="Email" required="">
+                            <input type="email" name="email" required="">
                             <label>Email</label>
                             <span></span>
                         </div>
@@ -260,7 +273,7 @@
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="password" name="Confirm Password" required="">
+                            <input type="password" name="confirm Password" required="">
                             <label>Confirm Password</label>
                             <span></span>
                         </div>

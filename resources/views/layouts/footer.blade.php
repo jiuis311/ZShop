@@ -14,6 +14,8 @@
     if (~window.location.search.indexOf('reset=true')) {
         paypal.minicart.reset();
     }
+
+    // console.log(paypal.minicart.cart.items()[0]->data);
 </script>
 
 
@@ -84,8 +86,9 @@
 <script type="text/javascript" src="{{ asset('js/elite-shop/bootstrap.js') }}"></script>
 <script>
     $(function(){
-        $('#logout').click(function() {
-            $('#logout-btn').click();
-        });
-    });
+        $("#logout-btn").on('click', function() {
+            console.log(1);
+            $("#logout-btn-hidden").trigger("click");
+        })
+    })
 </script>

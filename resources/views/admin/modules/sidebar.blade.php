@@ -41,6 +41,25 @@
                     <li><a href="{{ route('admin.product.create') }}"><i class="fa fa-plus"></i>Add new product</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-list-ul"></i> <span>Category</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-list-ul"></i>Category list</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cubes"></i> <span>Brand</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="fa fa-cubes"></i>Brand list</a></li>
+                    <li><a href=""><i class="fa fa-plus"></i>Add new brand</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
