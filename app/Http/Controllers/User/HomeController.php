@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $categories = Category::get();
+        $data = [
+            'categories' => $categories,
+        ];
+        return view('index', $data);
     }
 
     public function products() {
@@ -49,5 +54,13 @@ class HomeController extends Controller
 
     public function about() {
         return view('about');
+    }
+
+    public function category($id) {
+        $category = Category::where('name', $id)->first();
+        $data = [
+            'category' => $category,
+        ];
+        return view('products.products', $data);
     }
 }

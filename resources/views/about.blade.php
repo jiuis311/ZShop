@@ -203,7 +203,7 @@
             <h3 class="wthree_text_info">What's <span>Trending</span></h3>
 
             <div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
-                <a href="women.html">
+                <a href="{{ route('home') }}">
                     <div class="bb-left-agileits-w3layouts-inner grid">
                         <figure class="effect-roxy">
                             <img src="{{ asset('img/elite-shop/bb1.jpg') }}" alt=" " class="img-responsive" />
@@ -241,11 +241,11 @@
     <!--/grids-->
     <div class="agile_last_double_sectionw3ls">
         <div class="col-md-6 multi-gd-img multi-gd-text ">
-            <a href="womens.html"><img src="{{ asset('img/elite-shop/bot_1.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/elite-shop/bot_1.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
 
         </div>
         <div class="col-md-6 multi-gd-img multi-gd-text ">
-            <a href="womens.html"><img src="{{ asset('img/elite-shop/bot_2.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/elite-shop/bot_2.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -255,7 +255,7 @@
         <div class="container">
             <h6>We Offer Flat <span>40%</span> Discount</h6>
 
-            <a class="hvr-outline-out button2" href="{{ route('product.detail') }}">Shop Now </a>
+            <a class="hvr-outline-out button2" href="{{ route('home') }}">Shop Now </a>
         </div>
     </div>
     <!-- //we-offer -->

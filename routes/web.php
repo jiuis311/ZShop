@@ -13,13 +13,9 @@
 
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', 'User\HomeController@index')->name('home');
 
-Route::get('/home', function (){
-    return view('index');
-});
+Route::get('/home', 'User\HomeController@index');
 
 Route::prefix('admin')->group(function() {
     //Admin Log in
@@ -46,7 +42,8 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::get('/products', 'User\HomeController@products')->name('products');
-Route::get('/product-detail/{id}', 'User\HomeController@productDetailId')->name('product.detail.id');
+Route::get('/category/{id}', 'User\HomeController@category')->name('category');
+Route::get('/product/{id}', 'User\ProductController@productDetailId')->name('product.detail.id');
 Route::get('/product-detail', 'User\HomeController@productDetail')->name('product.detail');
 Route::get('/contact', 'User\HomeController@contact')->name('contact');
 Route::get('/cart', 'User\HomeController@cart')->name('cart');

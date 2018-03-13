@@ -27,11 +27,11 @@
                     <h4>Our <span>Information</span> </h4>
                     <ul>
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="mens.html">Men's Wear</a></li>
-                        <li><a href="womens.html">Women's wear</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="typography.html">Short Codes</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        @foreach(\App\Category::get() as $category)
+                            <li><a href="{{ route('category', ['id' => $category->name]) }}">{{ $category->name }}'s</a></li>
+                        @endforeach
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
 
@@ -75,15 +75,15 @@
                 <div class="col-md-3 sign-gd flickr-post">
                     <h4>Flickr <span>Posts</span></h4>
                     <ul>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t4.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="{{ route('product.detail') }}"><img src="img/elite-shop/t4.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t1.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t2.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t3.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t4.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t1.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t2.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t3.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t2.jpg') }}" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="{{ route('product.detail') }}"><img src="{{ asset('img/elite-shop/t4.jpg') }}" alt=" " class="img-responsive" /></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -171,4 +171,3 @@
     </div>
 </div>
 <!-- //login -->
-<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
