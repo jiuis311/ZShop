@@ -11,11 +11,21 @@
         action: '#'
     });
 
+    let formData = [];
+
+    paypal.minicart.cart.on('add',function(idx, product, isExisting){
+        if(isExisting){
+            formData.push({id: idx, product: product})
+        } else {
+
+        }
+    });
+
+    $.ajax()
+
     if (~window.location.search.indexOf('reset=true')) {
         paypal.minicart.reset();
     }
-
-    // console.log(paypal.minicart.cart.items()[0]->data);
 </script>
 
 

@@ -83,6 +83,7 @@
                                 <li class=" {{ (Route::currentRouteName() == 'products') ? "active menu__item--current" : "" }} menu__item"><a class="menu__link" href="{{ route('category', ['id' => $category->name]) }}">{{ $category->name }}'s</a></li>
                             @endforeach
                             <li class=" {{ (Route::currentRouteName() == 'contact') ? "active menu__item--current" : "" }} menu__item"><a class="menu__link" href="{{ route('contact') }}">Contact</a></li>
+                            <li class=" menu__item"><a class="menu__link" href="" id="checkout">Checkout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -146,7 +147,7 @@
 
                 </div>
                 <div class="col-md-4 modal_body_right modal_body_right1">
-                    <img src="img/elite-shop/log_pic.jpg" alt=" "/>
+                    <img src="{{ asset('img/elite-shop/log_pic.jpg') }}" alt=" "/>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -209,7 +210,7 @@
 
                 </div>
                 <div class="col-md-4 modal_body_right modal_body_right1">
-                    <img src="img/elite-shop/log_pic.jpg" alt=" "/>
+                    <img src="{{ asset('img/elite-shop/log_pic.jpg') }}" alt=" "/>
                 </div>
                 <div class="clearfix"></div>
             </div>
