@@ -7,6 +7,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+
+    @include('layouts.header')
+
     <title>Tabs Payment Form Flat Responsive Widget Template :: w3layouts</title>
     <!-- custom-theme -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,9 +27,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="{{ asset('css/payment/font-awesome.css') }}" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Mirza:400,500,600,700&amp;subset=arabic,latin-ext" rel="stylesheet">
+
 </head>
 <body>
+
+{{--header--}}
+<div class="header" id="home">
+    <div class="container">
+        <ul>
+            <li> <a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            @if (!Auth::guard()->check())
+                <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
+                <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
+            @else
+                <li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i> My account </a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="post" class="hidden">
+                        @csrf
+                        <button class="hidden" id="logout-btn-hidden" type="submit"></button>
+                    </form>
+                    <a href="#" id="logout-btn"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> Log out </a>
+                </li>
+            @endif
+            <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567800</li>
+        </ul>
+    </div>
+</div>
+{{--/header--}}
+
 <div class="main">
+
     <h1> Payment </h1>
     <div class="w3_agile_main_grids">
         <div class="w3layouts_main_grid_left">
@@ -45,30 +75,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="agileits_main_grid_right">
             <div class="wthree_payment_grid">
                 <h2>Payment detail</h2>
-                <form action="#" method="post" class="creditly-card-form agileinfo_form">
+                <form action="{{ route('order') }}" method="post" class="creditly-card-form agileinfo_form">
+                    @csrf
                     <section class="creditly-wrapper wthree, w3_agileits_wrapper">
                         <div class="credit-card-wrapper">
-                            <div class="first-row form-group">
-                                <div class="controls">
-                                    <label class="control-label">Name</label>
-                                    <input class="billing-address-name form-control" type="text" name="name"
-                                           placeholder="Your name" required>
+                                <div class="first-row form-group">
+                                    <div class="controls">
+                                        <label class="control-label">Name</label>
+                                        <input class="billing-address-name form-control" type="text"
+                                               name="name"
+                                               placeholder="Your name" required>
+                                    </div>
+                                    <div class="controls">
+                                        <label class="control-label">Ship to</label>
+                                        <input class="form-control" type="text"
+                                               name="address"
+                                               placeholder="Enter shipping address" required>
+                                    </div>
+                                    <div class="controls">
+                                        <label class="control-label">Phone number</label>
+                                        <input class="form-control" type="number"
+                                               name="phone"
+                                               placeholder="Enter phone number" required>
+                                    </div>
+                                    <div class="controls">
+                                        <label class="control-label">Email</label>
+                                        <input class="form-control" type="email"
+                                               name="email"
+                                               placeholder="Enter email" required>
+                                    </div>
                                 </div>
-                                <div class="controls">
-                                    <label class="control-label">Ship to</label>
-                                    <input class="form-control" type="text"
-                                           name="address"
-                                           placeholder="Enter shipping address" required>
+                                <div id="hidden-data">
+                                    {{--Hidden data TODO--}}
                                 </div>
-                                <div class="controls">
-                                    <label class="control-label">Phone number</label>
-                                    <input class="form-control" type="number"
-                                           name="phone"
-                                           placeholder="Enter phone number" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="submit"><span>Make a payment <i class="fa fa-long-arrow-right"
-                                                                           aria-hidden="true"></i></span></button>
+                                <button type="submit" id="hidden-btn" class="hidden"></button>
+                                <button type="button" class="submit"><span id="submit-btn">Make a payment <i class="fa fa-long-arrow-right"
+                                                                                             aria-hidden="true"></i></span></button>
                         </div>
                     </section>
                 </form>
@@ -80,6 +122,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p>© 2017 Tabs Payment Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
     </div>
 </div>
+
+
+<--script-->
+
+    @include('layouts.footer')
+
 <!-- credit-card -->
 <script type="text/javascript" src="{{ asset('js/payment/creditly.js') }}"></script>
 <script type="text/javascript">
@@ -128,6 +176,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <script>
     $(function() {
+        // Load data to checkout page
         let data = paypal.minicart.cart.items();
         console.log(data);
 
@@ -137,15 +186,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             let productName = $("<li></li>").text(data[i]._data.item_name);
             let quantity = $("<span></span>").text("Amount: " + data[i]._data.quantity);
             let code = $("<span></span>").text("Product code: " + data[i]._data.code);
-            let price = $("<li></li>").text(data[i]._total + "$");
+            let price = $("<li></li>").text(data[i]._total.toFixed(2) + "$");
             productName.append(code, quantity);
             item.append(productName, price);
             $("#item_list").append(item);
+
+            // Append item to post
+            let itemInput = $("<div></div>");
+
+            // Append name
+            let productId = document.createElement("INPUT");
+            productId.setAttribute("type", "hidden");
+            productId.setAttribute("name", "item[" + i + "][product_id]");
+            productId.setAttribute("value", data[i]._data.id);
+            itemInput.append(productId);
+
+            // Append price
+            price = $("<input>");
+            price = price.attr({
+                type: 'hidden',
+                name: "item[" + i + "][price]",
+                value: data[i]._data.amount
+            });
+            itemInput.append(price);
+
+            // Append quantity
+            quantity = $("<input>");
+            quantity = quantity.attr({
+                type: 'hidden',
+                name: "item[" + i + "][quantity]",
+                value: data[i]._data.quantity
+            });
+            itemInput.append(quantity);
+
+            // Append total price
+            let totalPrice = $("<input>");
+            totalPrice = totalPrice.attr({
+                type: 'hidden',
+                name: "item[" + i + "][total_price]",
+                value: data[i]._total.toFixed(2)
+            });
+            itemInput.append(totalPrice);
+
+            $('#hidden-data').append(itemInput);
         }
 
         let totalPay = paypal.minicart.cart.total().toFixed(2);
         $("#total_pay").text(totalPay + "$");
 
+        // Append total price order
+        let totalPrice = $("<input>");
+        totalPrice = totalPrice.attr({
+            type: 'hidden',
+            name: "total_price",
+            value: totalPay
+        });
+        $('#hidden-data').append(totalPrice);
+
+        // Submit btn
+        $('#submit-btn').on('click', function() {
+            console.log('Clicked');
+            $('#hidden-btn').trigger('click');
+        })
     })
 </script>
 

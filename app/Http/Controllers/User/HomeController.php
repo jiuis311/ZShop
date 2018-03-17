@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Order;
+use App\OrderDetail;
 use App\User;
 use App\Product;
 use App\Category;
@@ -48,10 +50,31 @@ class HomeController extends Controller
         return view('cart');
     }
 
+    /**
+     * Checkout view
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function checkout() {
         return view('checkout');
     }
 
+    public function order(Request $request) {
+        $data = $request->all();
+        $order = Order::create($data);
+        $items = $request->item;
+        foreach ($items as $item) {
+            $item['order_id'] = $order->id;
+            OrderDetail::create($item);
+        }
+        return redirect()->route('home');
+    }
+
+    /**
+     * About
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function about() {
         return view('about');
     }

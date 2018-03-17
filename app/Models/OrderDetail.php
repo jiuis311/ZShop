@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class OrderDetail extends Model
 {
     protected $fillable = [
-        'order_id', 'product_detail_id', 'quantity', 'price', 'total_price',
+        'order_id', 'product_id', 'quantity', 'price', 'total_price',
     ];
+
+    /**
+     * Get product information.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

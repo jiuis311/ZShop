@@ -52,6 +52,7 @@
                                             <input type="hidden" name="discount_amount" value="0.00" />
                                             <input type="hidden" name="currency_code" value="USD" />
                                             <input type="hidden" name="code" value="{{ $product->code }}" />
+                                            <input type="hidden" name="id" value={{ $product->id }} />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />

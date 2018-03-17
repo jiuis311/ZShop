@@ -52,12 +52,20 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-cubes"></i> <span>Brand</span>
+                    <i class="fa  fa-tag"></i> <span>Brand</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-cubes"></i>Brand list</a></li>
-                    <li><a href=""><i class="fa fa-plus"></i>Add new brand</a></li>
+                    <li><a href="{{ route('admin.brand.index') }}"><i class="fa  fa-tags"></i>Brand list</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-list"></i> <span>Order</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.order.index') }}"><i class="fa fa-list"></i>Order list</a></li>
                 </ul>
             </li>
         </ul>

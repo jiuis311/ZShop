@@ -1,6 +1,7 @@
 <div class="header" id="home">
     <div class="container">
         <ul>
+            <li> <a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
             @if (!Auth::guard()->check())
                 <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
                 <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
@@ -14,8 +15,7 @@
                     <a href="#" id="logout-btn"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> Log out </a>
                 </li>
             @endif
-            <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
-                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567800</li>
         </ul>
     </div>
 </div>
@@ -83,7 +83,7 @@
                                 <li class=" {{ (Route::currentRouteName() == 'products') ? "active menu__item--current" : "" }} menu__item"><a class="menu__link" href="{{ route('category', ['id' => $category->name]) }}">{{ $category->name }}'s</a></li>
                             @endforeach
                             <li class=" {{ (Route::currentRouteName() == 'contact') ? "active menu__item--current" : "" }} menu__item"><a class="menu__link" href="{{ route('contact') }}">Contact</a></li>
-                            <li class=" menu__item"><a class="menu__link" href="" id="checkout">Checkout</a></li>
+                            <li class=" menu__item"><a class="menu__link" href="{{ route('checkout') }}" id="checkout">Checkout</a></li>
                         </ul>
                     </div>
                 </div>

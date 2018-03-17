@@ -4,7 +4,7 @@
 
     <section class="content-header">
         <h1>
-            Category List
+            Brand List
         </h1>
 
     </section>
@@ -35,15 +35,15 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($brands as $brand)
                             <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->name }}</td>
+                                <td>{{ $brand->id }}</td>
+                                <td>{{ $brand->name }}</td>
                                 <td>
                                     <form action="" method="post">
                                         {{ csrf_field() }}
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button type="submit" data-id="{{ $category->id }}" class="btn btn-danger btn-sm">
+                                        <button type="submit" data-id="{{ $brand->id }}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </form>
@@ -52,7 +52,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $categories->links() }}
+                    {{ $brands->links() }}
                 </div>
                 <!-- /.box-body -->
                 {{--Trigger add new modal--}}
@@ -69,14 +69,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Category</h4>
+                        <h4 class="modal-title">Add Brand</h4>
                     </div>
-                    <form action="{{ route('admin.category.store') }}" method="post">
+                    <form action="{{ route('admin.brand.store') }}" method="post">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Name:</label>
-                                <input type="text" class="form-control" placeholder="Enter category" name="name" required>
+                                <input type="text" class="form-control" placeholder="Enter brand" name="name" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -128,20 +128,20 @@
                     dangerMode: true,
                 })
                     .then((willDelete) => {
-                    if(willDelete) {
-                        $.ajax({
-                            type: 'delete',
-                            url: 'category/' + id,
-                            success: function (response) {
-                                btn.parent().parent().parent().fadeOut('slow');
-                            },
-                            error: function (xhr, status, error) {
-                                toastr.error('Unable to delete.', 'Error!');
-                            },
-                        });
-                    }
-                }
-            )
+                            if(willDelete) {
+                                $.ajax({
+                                    type: 'delete',
+                                    url: 'brand/' + id,
+                                    success: function (response) {
+                                        btn.parent().parent().parent().fadeOut('slow');
+                                    },
+                                    error: function (xhr, status, error) {
+                                        toastr.error('Unable to delete.', 'Error!');
+                                    },
+                                });
+                            }
+                        }
+                    )
                 ;
             });
             // END AJAX
