@@ -69,6 +69,10 @@ Route::get('/about', 'User\HomeController@about')->name('about');
  */
 Route::post('order', 'User\HomeController@order')->name('order');
 
+/**
+ * Checkout success
+ */
+Route::get('checkout/success', 'User\HomeController@checkoutSuccess')->name('checkout.success');
 
 Auth::routes();
 

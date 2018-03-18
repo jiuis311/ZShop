@@ -31,12 +31,6 @@
                             <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
                                 <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
-                                <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li data-thumb="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}">
-                                <div class="thumb-image"> <img src="{{ ($product->image == null) ? asset('img/default.png') : asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>

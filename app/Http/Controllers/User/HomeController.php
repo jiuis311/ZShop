@@ -67,7 +67,7 @@ class HomeController extends Controller
             $item['order_id'] = $order->id;
             OrderDetail::create($item);
         }
-        return redirect()->route('home');
+        return redirect()->route('checkout.success');
     }
 
     /**
@@ -85,5 +85,9 @@ class HomeController extends Controller
             'category' => $category,
         ];
         return view('products.products', $data);
+    }
+
+    public function checkoutSuccess() {
+        return view('checkout_success');
     }
 }
