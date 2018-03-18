@@ -59,7 +59,8 @@ class ManageUserController extends Controller
         $data = [
             'user' => $user,
         ];
-        return view('admin.usermanage.show', $data);
+//        dd($user->orders);
+        return view('admin.usermanage.show2', $data);
     }
 
     /**
@@ -89,7 +90,7 @@ class ManageUserController extends Controller
         $data = $request->all();
         $data = array_slice($data, 2);
         User::where('id',$id)->update($data);
-        return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.show', $id);
     }
 
     /**

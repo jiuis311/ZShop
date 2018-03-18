@@ -39,6 +39,10 @@
             <div class="col-md-8 single-right-left simpleCart_shelfItem">
                 <h3>{{ $product->name }}</h3>
                 <p><span class="item_price">${{ $product->price }}</span></p>
+                <h5>Brand :</h5>
+                <label>{{ $product->brand->name }}</label>
+                <br>
+                <br>
                 <div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
@@ -64,7 +68,8 @@
                                 <input type="hidden" name="amount" value="{{ $product->price }}">
                                 <input type="hidden" name="discount_amount" value="0">
                                 <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="code" value="{{ $product->code }}"
+                                <input type="hidden" name="id" value={{ $product->id }} />
+                                <input type="hidden" name="code" value="{{ $product->code }}">
                                 <input type="hidden" name="return" value=" ">
                                 <input type="hidden" name="cancel_return" value=" ">
                                 <input type="submit" name="submit" value="Add to cart" class="button">
@@ -96,7 +101,6 @@
                     <ul class="resp-tabs-list">
                         <li>Description</li>
                         <li>Reviews</li>
-                        <li>Information</li>
                     </ul>
                     <div class="resp-tabs-container">
                         <!--/tab_one-->
@@ -113,9 +117,6 @@
                             <div class="single_page_agile_its_w3ls">
                                 <div class="bootstrap-tab-text-grids">
                                     <div class="bootstrap-tab-text-grid">
-                                        <div class="bootstrap-tab-text-grid-left">
-                                            <img src="{{ asset('img/elite-shop/t1.jpg') }}" alt=" " class="img-responsive">
-                                        </div>
                                         <div class="bootstrap-tab-text-grid-right">
                                             <ul>
                                                 <li><a href="#">Admin</a></li>
@@ -138,14 +139,6 @@
                                     </div>
                                 </div>
 
-                            </div>
-                        </div>
-                        <div class="tab3">
-
-                            <div class="single_page_agile_its_w3ls">
-                                <h6>{{ $product->name }}</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
-                                <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                             </div>
                         </div>
                     </div>
@@ -184,6 +177,8 @@
                                             <input type="hidden" name="amount" value="{{ $featureProduct->price }}">
                                             <input type="hidden" name="discount_amount" value="0.00">
                                             <input type="hidden" name="currency_code" value="USD">
+                                            <input type="hidden" name="code" value="{{ $product->code }}">
+                                            <input type="hidden" name="id" value={{ $product->id }} />
                                             <input type="hidden" name="return" value=" ">
                                             <input type="hidden" name="cancel_return" value=" ">
                                             <input type="submit" name="submit" value="Add to cart" class="button">

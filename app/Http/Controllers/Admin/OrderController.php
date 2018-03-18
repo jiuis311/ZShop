@@ -6,6 +6,7 @@ use App\Order;
 use App\OrderDetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -100,6 +101,18 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $order->status = 1;
         $order->save();
+
+        $mailData = [
+            'name' => $order->name,
+            'total' => $order->total_price
+        ];
+
+        Mail::send('mails.normal', $mailData, function ($m) use ($order) {
+            $m->subject('Order confirm');
+            $m->from('zshop@gmail.com', 'ZShop');
+            $m->to($order->email, $order->name);
+        });
+
         return redirect()->route('admin.order.show', $id);
     }
 

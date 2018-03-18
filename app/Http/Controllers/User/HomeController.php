@@ -9,6 +9,7 @@ use App\User;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -61,8 +62,10 @@ class HomeController extends Controller
 
     public function order(Request $request) {
         $data = $request->all();
+        $data['user_id'] = Auth::id();
         $order = Order::create($data);
         $items = $request->item;
+//        dd($data);
         foreach ($items as $item) {
             $item['order_id'] = $order->id;
             OrderDetail::create($item);

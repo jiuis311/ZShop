@@ -34,4 +34,8 @@ class User extends Authenticatable
     protected $attributes = [
         "gender" => 1,
     ];
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
 }

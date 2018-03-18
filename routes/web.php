@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Mail;
-
 Route::get('/', 'User\HomeController@index')->name('home');
 
 Route::get('/home', 'User\HomeController@index');
@@ -78,13 +76,10 @@ Auth::routes();
 
 
 //Route::get('/', function () {
-////    Route::get('/', function () {
-////        return view('index');
-////    })->name('home');
-////    dd(env('MAIL_USERNAME'));
+//    dd(env('MAIL_USERNAME'));
 //    Mail::send('mails.normal', ['name' => 'Linh'], function($m) {
 //        $m->subject('Welcome');
 //        $m->to('ltlinh311@gmail.com', 'Linh');
 //    });
-//    dd('done');
+//    dd(Auth::id());
 //})->name('home');

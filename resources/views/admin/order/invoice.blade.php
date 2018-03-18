@@ -51,7 +51,7 @@
                 <b>Invoice #{{ $order->id }}</b><br>
                 <br>
                 <b>Order ID:</b> {{ $order->id }}<br>
-                <b>Account:</b> {{ $order->user_id }}
+                <b>Account:</b> {{ ($order->user_id != null) ? $order->user->name : "" }} ({{ $order->user_id }})
             </div>
             <!-- /.col -->
         </div>
@@ -128,6 +128,9 @@
             <div class="col-xs-12">
                 <a href="{{ route('admin.order.index') }}" class="btn btn-default"><i class="fa fa-list"></i>
                     Back</a>
+                <a href="{{ ($order->user_id == null) ? "" : route('admin.user.show', $order->user_id) }}" class="btn btn-primary"
+                {{ ($order->user_id == null) ? "disabled" : "" }} ><i class="fa fa-user"></i>
+                    Show user</a>
                 <a href="{{ route('admin.order.cancel', $order->id) }}"><button type="button" class="btn btn-danger pull-right" style="margin-right: 5px;"><i class="fa fa-truck"></i> Cancel</button></a>
                 <a href="{{ route('admin.order.deliver', $order->id) }}"><button type="button" class="btn btn-success pull-right" style="margin-right: 5px;"><i class="fa fa-truck"></i> Deliver</button></a>
                 <a href="{{ route('admin.order.confirm', $order->id) }}"><button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">

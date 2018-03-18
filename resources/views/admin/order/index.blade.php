@@ -20,6 +20,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>User id</th>
                             <th>Email</th>
                             <th>Phone number</th>
                             <th>Address</th>
@@ -38,6 +39,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -45,6 +47,7 @@
                             <tr>
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->name }}</td>
+                                <td>{{ $order->user_id }}</td>
                                 <td>{{ $order->email }}</td>
                                 <td>{{ $order->phone }}</td>
                                 <td>{{ $order->address }}</td>

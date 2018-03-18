@@ -36,7 +36,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <a href="{{ route('admin.user.edit', ['id'=>$product->id]) }}">
+                    <a href="{{ route('admin.user.edit', ['id'=>$user->id]) }}">
                         <button class="btn btn-warning">Edit information</button>
                     </a>
                 </div>
