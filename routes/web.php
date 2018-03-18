@@ -72,6 +72,12 @@ Route::post('order', 'User\HomeController@order')->name('order');
  */
 Route::get('checkout/success', 'User\HomeController@checkoutSuccess')->name('checkout.success');
 
+/**
+ * User account
+ */
+Route::get('account', 'User\AccountController@index')->middleware('auth')->name('account');
+Route::get('account/cancel/{id}', 'User\AccountController@cancel')->middleware('auth')->name('account.cancel');
+
 Auth::routes();
 
 

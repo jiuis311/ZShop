@@ -6,7 +6,7 @@
                 <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
                 <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
             @else
-                <li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i> My account </a></li>
+                <li> <a href="{{ route('account') }}"><i class="fa fa-user" aria-hidden="true"></i> My account </a></li>
                 <li>
                     <form action="{{ route('logout') }}" method="post" class="hidden">
                         @csrf
