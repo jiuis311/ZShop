@@ -53,7 +53,11 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        //
+        $brand = Brand::find($id);
+        $data = [
+            'brand' => $brand
+        ];
+        return view('admin.brand.show', $data);
     }
 
     /**
