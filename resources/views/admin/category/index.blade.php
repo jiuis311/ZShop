@@ -21,14 +21,18 @@
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover display" id="">
                         <thead>
+                        <col width="200">
+                        <col width="700">
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Item list</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
+                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -39,6 +43,11 @@
                             <tr>
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fa fa-list"></i>
+                                    </button>
+                                </td>
                                 <td>
                                     <form action="" method="post">
                                         {{ csrf_field() }}
