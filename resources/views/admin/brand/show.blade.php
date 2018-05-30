@@ -4,7 +4,7 @@
 
     <section class="content-header">
         <h1>
-            {{ $brand->product }}'s product List
+            {{ $brand->name }}'s product List
         </h1>
 
     </section>
@@ -86,6 +86,11 @@
                         </tbody>
                     </table>
                     {{ $products->links() }}
+                    <a href="{{ route('admin.brand.index')  }}">
+                        <button class="btn btn-primary pull-left">
+                            Brand list
+                        </button>
+                    </a>
                 </div>
                 <!-- /.box-body -->
                 {{--Trigger add new modal--}}

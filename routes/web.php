@@ -79,13 +79,3 @@ Route::get('account', 'User\AccountController@index')->middleware('auth')->name(
 Route::get('account/cancel/{id}', 'User\AccountController@cancel')->middleware('auth')->name('account.cancel');
 
 Auth::routes();
-
-
-//Route::get('/', function () {
-//    dd(env('MAIL_USERNAME'));
-//    Mail::send('mails.normal', ['name' => 'Linh'], function($m) {
-//        $m->subject('Welcome');
-//        $m->to('ltlinh311@gmail.com', 'Linh');
-//    });
-//    dd(Auth::id());
-//})->name('home');

@@ -4,7 +4,7 @@
 
     <section class="content-header">
         <h1>
-            Brand List
+            {{ $category->name }}'s product List
         </h1>
 
     </section>
@@ -12,7 +12,7 @@
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCategory"><i class="fa fa-fw fa-plus"></i>Add new</button>
+                <a href="{{ route('admin.product.create') }}"><button type="button" class="btn btn-success" ><i class="fa fa-fw fa-plus"></i>Add new</button></a>
                 <br/>
                 <br/>
                 <div class="box">
@@ -21,12 +21,15 @@
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover display" id="">
                         <thead>
-                        <col width="200">
-                        <col width="700">
                         <tr>
-                            <th>Id</th>
+                            <th>Code</th>
                             <th>Name</th>
-                            <th>Item list</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Show</th>
+                            <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
@@ -36,17 +39,36 @@
                             <th></th>
                             <th></th>
                             <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach ($brands as $brand)
+                        @php
+                            $products = $category->products()->orderBy('updated_at', 'desc')->paginate(10);
+                        @endphp
+                        @foreach ($products as $product)
                             <tr>
-                                <td>{{ $brand->id }}</td>
-                                <td>{{ $brand->name }}</td>
+                                <td>{{ $product->code }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->brand->name }}</td>
+                                <td>{{ $product->category->name }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td>{{ $product->price }}</td>
                                 <td>
-                                    <a href="{{ route('admin.brand.show', $brand->id) }}">
+                                    <a href="{{ route('admin.product.show', $product->id) }}">
                                         <button class="btn btn-primary btn-sm">
-                                            <i class="fa fa-list"></i>
+                                            <i class="fa fa-th-list"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.product.edit', $product->id) }}">
+                                        <button class="btn btn-warning btn-sm">
+                                            <i class="fa fa-edit"></i>
                                         </button>
                                     </a>
                                 </td>
@@ -54,7 +76,7 @@
                                     <form action="" method="post">
                                         {{ csrf_field() }}
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button type="submit" data-id="{{ $brand->id }}" class="btn btn-danger btn-sm">
+                                        <button type="submit" data-id="{{ $product->id }}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </form>
@@ -63,7 +85,12 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $brands->links() }}
+                    {{ $products->links() }}
+                    <a href="{{ route('admin.category.index')  }}">
+                        <button class="btn btn-primary pull-left">
+                            Category list
+                        </button>
+                    </a>
                 </div>
                 <!-- /.box-body -->
                 {{--Trigger add new modal--}}
@@ -71,35 +98,6 @@
             </div>
             <!-- /.box -->
         </div>
-
-        <!-- Modal -->
-        <div id="addCategory" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Brand</h4>
-                    </div>
-                    <form action="{{ route('admin.brand.store') }}" method="post">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Name:</label>
-                                <input type="text" class="form-control" placeholder="Enter brand" name="name" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" >Add</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        {{--End modal--}}
     </section>
 @endsection
 
@@ -142,7 +140,7 @@
                             if(willDelete) {
                                 $.ajax({
                                     type: 'delete',
-                                    url: 'brand/' + id,
+                                    url: 'product/' + id,
                                     success: function (response) {
                                         btn.parent().parent().parent().fadeOut('slow');
                                     },
