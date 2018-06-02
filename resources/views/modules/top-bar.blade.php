@@ -185,7 +185,7 @@
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="password" name="confirm Password" required="">
+                            <input type="password" name="password_confirmation" required="">
                             <label>Confirm Password</label>
                             <span></span>
                         </div>
