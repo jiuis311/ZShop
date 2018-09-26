@@ -24,7 +24,7 @@
         <div class="container">
             <!-- mens -->
             <div class="single-pro">
-                @foreach($category->products as $product)
+                @foreach($category->products->sortByDesc('updated_at') as $product)
                     <div class="col-md-3 product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">

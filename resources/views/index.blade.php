@@ -196,7 +196,7 @@
 					<!--/tab_one-->
 					@foreach($categories as $value => $category)
 						<div class="tab{{$value}}">
-							@foreach($category->products->take(8) as $product)
+							@foreach($category->products->sortByDesc('updated_at')->take(8) as $product)
 							<div class="col-md-3 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
