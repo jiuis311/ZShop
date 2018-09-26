@@ -20,7 +20,7 @@ class AdminController extends Controller
         $check = Auth::guard('admin')->attempt($request->only(['username', 'password']));
 
         if ($check) {
-            return redirect()->route('admin.order.index');
+            return redirect()->route('admin.index');
         } else {
             return redirect()->route('admin.login');
         }
